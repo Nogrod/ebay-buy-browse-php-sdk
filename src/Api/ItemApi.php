@@ -138,7 +138,6 @@ class ItemApi
      * Operation checkCompatibility
      *
      * @param  string $item_id This path parameter specifies the unique RESTful identifier of an item (such as the park you want to check).&lt;br&gt;&lt;br&gt;&lt;b&gt;RESTful Item ID Format: &lt;/b&gt;&lt;code&gt;v1&lt;/code&gt;|&lt;code&gt;&lt;i&gt;#&lt;/i&gt;&lt;/code&gt;|&lt;code&gt;&lt;i&gt;#&lt;/i&gt;&lt;/code&gt;&lt;br&gt;&lt;br&gt;For a single SKU listing, pass in the item ID: &lt;pre&gt;v1|2**********2|0&lt;/pre&gt;For a multi-SKU listing, pass in the identifier of the variation:&lt;pre&gt;v1|1**********2|4**********2&lt;/pre&gt;&lt;br&gt;For more information about item IDs for RESTful APIs, refer to &lt;a href&#x3D;\&quot;/api-docs/buy/static/api-browse.html#Legacy\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Item ID legacy API compatibility overview&lt;/a&gt; in the &lt;a href&#x3D;\&quot;/api-docs/buy/static/buying-ig-landing.html\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Buying Integration Guide&lt;/a&gt;. (required)
-     * @param  string $content_type This header indicates the format of the request body provided by the client.&lt;br&gt;&lt;br&gt;Its value should be set to &lt;code&gt;application/json&lt;/code&gt;.&lt;br&gt;&lt;br&gt;For more information, refer to &lt;a href&#x3D;\&quot;/api-docs/static/rest-request-components.html#HTTP\&quot; target&#x3D;\&quot;_blank \&quot;&gt;HTTP request headers&lt;/a&gt; in the &lt;a href&#x3D;\&quot;/api-docs/static/ebay-rest-landing.html\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Using eBay RESTful APIs&lt;/a&gt; guide. (required)
      * @param  string|null $x_ebay_c_marketplace_id This header identifies the seller&#39;s eBay marketplace. It is required for all marketplaces outside of the US.&lt;br&gt;&lt;br&gt;&lt;span class&#x3D;\&quot;tablenote\&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; If a marketplace ID value is not provided, the default value of &lt;code&gt;EBAY_US&lt;/code&gt; is used.&lt;/span&gt;&lt;br&gt;See &lt;a href&#x3D;\&quot;/api-docs/buy/browse/types/ba:MarketplaceIdEnum\&quot; target&#x3D;\&quot;_blank\&quot;&gt;MarketplaceIdEnum&lt;/a&gt; for supported values. (optional)
      * @param  string|null $accept_language This header is used to indicate the natural language and locale preferred by the user for the response.&lt;br&gt;&lt;br&gt;This header is required when targeting a specific locale of a marketplace that supports multiple locales. For example:&lt;ul&gt;&lt;li&gt;When targeting the French locale of the Belgium marketplace, it is required to pass in &lt;code&gt;fr-BE&lt;/code&gt; to specify this. If this locale is not specified, the language will default to Dutch.&lt;/li&gt;&lt;li&gt;When targeting the French locale of the Canadian marketplace, it is required to pass in &lt;code&gt;fr-CA&lt;/code&gt; to specify this. If this locale is not specified, the language will default to English.&lt;/li&gt;&lt;/ul&gt; (optional)
      * @param  \eBay\Buy\Browse\Model\CompatibilityPayload|null $compatibility_payload compatibility_payload (optional)
@@ -150,13 +149,12 @@ class ItemApi
      */
     public function checkCompatibility(
         string $item_id,
-        string $content_type,
         ?string $x_ebay_c_marketplace_id = null,
         ?string $accept_language = null,
         ?\eBay\Buy\Browse\Model\CompatibilityPayload $compatibility_payload = null,
         string $contentType = self::contentTypes['checkCompatibility'][0]
     ): \eBay\Buy\Browse\Model\CompatibilityResponse {
-        list($response) = $this->checkCompatibilityWithHttpInfo($item_id, $content_type, $x_ebay_c_marketplace_id, $accept_language, $compatibility_payload, $contentType);
+        list($response) = $this->checkCompatibilityWithHttpInfo($item_id, $x_ebay_c_marketplace_id, $accept_language, $compatibility_payload, $contentType);
         return $response;
     }
 
@@ -164,7 +162,6 @@ class ItemApi
      * Operation checkCompatibilityWithHttpInfo
      *
      * @param  string $item_id This path parameter specifies the unique RESTful identifier of an item (such as the park you want to check).&lt;br&gt;&lt;br&gt;&lt;b&gt;RESTful Item ID Format: &lt;/b&gt;&lt;code&gt;v1&lt;/code&gt;|&lt;code&gt;&lt;i&gt;#&lt;/i&gt;&lt;/code&gt;|&lt;code&gt;&lt;i&gt;#&lt;/i&gt;&lt;/code&gt;&lt;br&gt;&lt;br&gt;For a single SKU listing, pass in the item ID: &lt;pre&gt;v1|2**********2|0&lt;/pre&gt;For a multi-SKU listing, pass in the identifier of the variation:&lt;pre&gt;v1|1**********2|4**********2&lt;/pre&gt;&lt;br&gt;For more information about item IDs for RESTful APIs, refer to &lt;a href&#x3D;\&quot;/api-docs/buy/static/api-browse.html#Legacy\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Item ID legacy API compatibility overview&lt;/a&gt; in the &lt;a href&#x3D;\&quot;/api-docs/buy/static/buying-ig-landing.html\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Buying Integration Guide&lt;/a&gt;. (required)
-     * @param  string $content_type This header indicates the format of the request body provided by the client.&lt;br&gt;&lt;br&gt;Its value should be set to &lt;code&gt;application/json&lt;/code&gt;.&lt;br&gt;&lt;br&gt;For more information, refer to &lt;a href&#x3D;\&quot;/api-docs/static/rest-request-components.html#HTTP\&quot; target&#x3D;\&quot;_blank \&quot;&gt;HTTP request headers&lt;/a&gt; in the &lt;a href&#x3D;\&quot;/api-docs/static/ebay-rest-landing.html\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Using eBay RESTful APIs&lt;/a&gt; guide. (required)
      * @param  string|null $x_ebay_c_marketplace_id This header identifies the seller&#39;s eBay marketplace. It is required for all marketplaces outside of the US.&lt;br&gt;&lt;br&gt;&lt;span class&#x3D;\&quot;tablenote\&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; If a marketplace ID value is not provided, the default value of &lt;code&gt;EBAY_US&lt;/code&gt; is used.&lt;/span&gt;&lt;br&gt;See &lt;a href&#x3D;\&quot;/api-docs/buy/browse/types/ba:MarketplaceIdEnum\&quot; target&#x3D;\&quot;_blank\&quot;&gt;MarketplaceIdEnum&lt;/a&gt; for supported values. (optional)
      * @param  string|null $accept_language This header is used to indicate the natural language and locale preferred by the user for the response.&lt;br&gt;&lt;br&gt;This header is required when targeting a specific locale of a marketplace that supports multiple locales. For example:&lt;ul&gt;&lt;li&gt;When targeting the French locale of the Belgium marketplace, it is required to pass in &lt;code&gt;fr-BE&lt;/code&gt; to specify this. If this locale is not specified, the language will default to Dutch.&lt;/li&gt;&lt;li&gt;When targeting the French locale of the Canadian marketplace, it is required to pass in &lt;code&gt;fr-CA&lt;/code&gt; to specify this. If this locale is not specified, the language will default to English.&lt;/li&gt;&lt;/ul&gt; (optional)
      * @param  \eBay\Buy\Browse\Model\CompatibilityPayload|null $compatibility_payload (optional)
@@ -176,13 +173,12 @@ class ItemApi
      */
     public function checkCompatibilityWithHttpInfo(
         string $item_id,
-        string $content_type,
         ?string $x_ebay_c_marketplace_id = null,
         ?string $accept_language = null,
         ?\eBay\Buy\Browse\Model\CompatibilityPayload $compatibility_payload = null,
         string $contentType = self::contentTypes['checkCompatibility'][0]
     ): array {
-        $request = $this->checkCompatibilityRequest($item_id, $content_type, $x_ebay_c_marketplace_id, $accept_language, $compatibility_payload, $contentType);
+        $request = $this->checkCompatibilityRequest($item_id, $x_ebay_c_marketplace_id, $accept_language, $compatibility_payload, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -296,7 +292,6 @@ class ItemApi
      * Operation checkCompatibilityAsync
      *
      * @param  string $item_id This path parameter specifies the unique RESTful identifier of an item (such as the park you want to check).&lt;br&gt;&lt;br&gt;&lt;b&gt;RESTful Item ID Format: &lt;/b&gt;&lt;code&gt;v1&lt;/code&gt;|&lt;code&gt;&lt;i&gt;#&lt;/i&gt;&lt;/code&gt;|&lt;code&gt;&lt;i&gt;#&lt;/i&gt;&lt;/code&gt;&lt;br&gt;&lt;br&gt;For a single SKU listing, pass in the item ID: &lt;pre&gt;v1|2**********2|0&lt;/pre&gt;For a multi-SKU listing, pass in the identifier of the variation:&lt;pre&gt;v1|1**********2|4**********2&lt;/pre&gt;&lt;br&gt;For more information about item IDs for RESTful APIs, refer to &lt;a href&#x3D;\&quot;/api-docs/buy/static/api-browse.html#Legacy\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Item ID legacy API compatibility overview&lt;/a&gt; in the &lt;a href&#x3D;\&quot;/api-docs/buy/static/buying-ig-landing.html\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Buying Integration Guide&lt;/a&gt;. (required)
-     * @param  string $content_type This header indicates the format of the request body provided by the client.&lt;br&gt;&lt;br&gt;Its value should be set to &lt;code&gt;application/json&lt;/code&gt;.&lt;br&gt;&lt;br&gt;For more information, refer to &lt;a href&#x3D;\&quot;/api-docs/static/rest-request-components.html#HTTP\&quot; target&#x3D;\&quot;_blank \&quot;&gt;HTTP request headers&lt;/a&gt; in the &lt;a href&#x3D;\&quot;/api-docs/static/ebay-rest-landing.html\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Using eBay RESTful APIs&lt;/a&gt; guide. (required)
      * @param  string|null $x_ebay_c_marketplace_id This header identifies the seller&#39;s eBay marketplace. It is required for all marketplaces outside of the US.&lt;br&gt;&lt;br&gt;&lt;span class&#x3D;\&quot;tablenote\&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; If a marketplace ID value is not provided, the default value of &lt;code&gt;EBAY_US&lt;/code&gt; is used.&lt;/span&gt;&lt;br&gt;See &lt;a href&#x3D;\&quot;/api-docs/buy/browse/types/ba:MarketplaceIdEnum\&quot; target&#x3D;\&quot;_blank\&quot;&gt;MarketplaceIdEnum&lt;/a&gt; for supported values. (optional)
      * @param  string|null $accept_language This header is used to indicate the natural language and locale preferred by the user for the response.&lt;br&gt;&lt;br&gt;This header is required when targeting a specific locale of a marketplace that supports multiple locales. For example:&lt;ul&gt;&lt;li&gt;When targeting the French locale of the Belgium marketplace, it is required to pass in &lt;code&gt;fr-BE&lt;/code&gt; to specify this. If this locale is not specified, the language will default to Dutch.&lt;/li&gt;&lt;li&gt;When targeting the French locale of the Canadian marketplace, it is required to pass in &lt;code&gt;fr-CA&lt;/code&gt; to specify this. If this locale is not specified, the language will default to English.&lt;/li&gt;&lt;/ul&gt; (optional)
      * @param  \eBay\Buy\Browse\Model\CompatibilityPayload|null $compatibility_payload (optional)
@@ -307,13 +302,12 @@ class ItemApi
      */
     public function checkCompatibilityAsync(
         string $item_id,
-        string $content_type,
         ?string $x_ebay_c_marketplace_id = null,
         ?string $accept_language = null,
         ?\eBay\Buy\Browse\Model\CompatibilityPayload $compatibility_payload = null,
         string $contentType = self::contentTypes['checkCompatibility'][0]
     ): PromiseInterface {
-        return $this->checkCompatibilityAsyncWithHttpInfo($item_id, $content_type, $x_ebay_c_marketplace_id, $accept_language, $compatibility_payload, $contentType)
+        return $this->checkCompatibilityAsyncWithHttpInfo($item_id, $x_ebay_c_marketplace_id, $accept_language, $compatibility_payload, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -325,7 +319,6 @@ class ItemApi
      * Operation checkCompatibilityAsyncWithHttpInfo
      *
      * @param  string $item_id This path parameter specifies the unique RESTful identifier of an item (such as the park you want to check).&lt;br&gt;&lt;br&gt;&lt;b&gt;RESTful Item ID Format: &lt;/b&gt;&lt;code&gt;v1&lt;/code&gt;|&lt;code&gt;&lt;i&gt;#&lt;/i&gt;&lt;/code&gt;|&lt;code&gt;&lt;i&gt;#&lt;/i&gt;&lt;/code&gt;&lt;br&gt;&lt;br&gt;For a single SKU listing, pass in the item ID: &lt;pre&gt;v1|2**********2|0&lt;/pre&gt;For a multi-SKU listing, pass in the identifier of the variation:&lt;pre&gt;v1|1**********2|4**********2&lt;/pre&gt;&lt;br&gt;For more information about item IDs for RESTful APIs, refer to &lt;a href&#x3D;\&quot;/api-docs/buy/static/api-browse.html#Legacy\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Item ID legacy API compatibility overview&lt;/a&gt; in the &lt;a href&#x3D;\&quot;/api-docs/buy/static/buying-ig-landing.html\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Buying Integration Guide&lt;/a&gt;. (required)
-     * @param  string $content_type This header indicates the format of the request body provided by the client.&lt;br&gt;&lt;br&gt;Its value should be set to &lt;code&gt;application/json&lt;/code&gt;.&lt;br&gt;&lt;br&gt;For more information, refer to &lt;a href&#x3D;\&quot;/api-docs/static/rest-request-components.html#HTTP\&quot; target&#x3D;\&quot;_blank \&quot;&gt;HTTP request headers&lt;/a&gt; in the &lt;a href&#x3D;\&quot;/api-docs/static/ebay-rest-landing.html\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Using eBay RESTful APIs&lt;/a&gt; guide. (required)
      * @param  string|null $x_ebay_c_marketplace_id This header identifies the seller&#39;s eBay marketplace. It is required for all marketplaces outside of the US.&lt;br&gt;&lt;br&gt;&lt;span class&#x3D;\&quot;tablenote\&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; If a marketplace ID value is not provided, the default value of &lt;code&gt;EBAY_US&lt;/code&gt; is used.&lt;/span&gt;&lt;br&gt;See &lt;a href&#x3D;\&quot;/api-docs/buy/browse/types/ba:MarketplaceIdEnum\&quot; target&#x3D;\&quot;_blank\&quot;&gt;MarketplaceIdEnum&lt;/a&gt; for supported values. (optional)
      * @param  string|null $accept_language This header is used to indicate the natural language and locale preferred by the user for the response.&lt;br&gt;&lt;br&gt;This header is required when targeting a specific locale of a marketplace that supports multiple locales. For example:&lt;ul&gt;&lt;li&gt;When targeting the French locale of the Belgium marketplace, it is required to pass in &lt;code&gt;fr-BE&lt;/code&gt; to specify this. If this locale is not specified, the language will default to Dutch.&lt;/li&gt;&lt;li&gt;When targeting the French locale of the Canadian marketplace, it is required to pass in &lt;code&gt;fr-CA&lt;/code&gt; to specify this. If this locale is not specified, the language will default to English.&lt;/li&gt;&lt;/ul&gt; (optional)
      * @param  \eBay\Buy\Browse\Model\CompatibilityPayload|null $compatibility_payload (optional)
@@ -336,14 +329,13 @@ class ItemApi
      */
     public function checkCompatibilityAsyncWithHttpInfo(
         $item_id,
-        $content_type,
         $x_ebay_c_marketplace_id = null,
         $accept_language = null,
         $compatibility_payload = null,
         string $contentType = self::contentTypes['checkCompatibility'][0]
     ): PromiseInterface {
         $returnType = '\eBay\Buy\Browse\Model\CompatibilityResponse';
-        $request = $this->checkCompatibilityRequest($item_id, $content_type, $x_ebay_c_marketplace_id, $accept_language, $compatibility_payload, $contentType);
+        $request = $this->checkCompatibilityRequest($item_id, $x_ebay_c_marketplace_id, $accept_language, $compatibility_payload, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -385,7 +377,6 @@ class ItemApi
      * Create request for operation 'checkCompatibility'
      *
      * @param  string $item_id This path parameter specifies the unique RESTful identifier of an item (such as the park you want to check).&lt;br&gt;&lt;br&gt;&lt;b&gt;RESTful Item ID Format: &lt;/b&gt;&lt;code&gt;v1&lt;/code&gt;|&lt;code&gt;&lt;i&gt;#&lt;/i&gt;&lt;/code&gt;|&lt;code&gt;&lt;i&gt;#&lt;/i&gt;&lt;/code&gt;&lt;br&gt;&lt;br&gt;For a single SKU listing, pass in the item ID: &lt;pre&gt;v1|2**********2|0&lt;/pre&gt;For a multi-SKU listing, pass in the identifier of the variation:&lt;pre&gt;v1|1**********2|4**********2&lt;/pre&gt;&lt;br&gt;For more information about item IDs for RESTful APIs, refer to &lt;a href&#x3D;\&quot;/api-docs/buy/static/api-browse.html#Legacy\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Item ID legacy API compatibility overview&lt;/a&gt; in the &lt;a href&#x3D;\&quot;/api-docs/buy/static/buying-ig-landing.html\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Buying Integration Guide&lt;/a&gt;. (required)
-     * @param  string $content_type This header indicates the format of the request body provided by the client.&lt;br&gt;&lt;br&gt;Its value should be set to &lt;code&gt;application/json&lt;/code&gt;.&lt;br&gt;&lt;br&gt;For more information, refer to &lt;a href&#x3D;\&quot;/api-docs/static/rest-request-components.html#HTTP\&quot; target&#x3D;\&quot;_blank \&quot;&gt;HTTP request headers&lt;/a&gt; in the &lt;a href&#x3D;\&quot;/api-docs/static/ebay-rest-landing.html\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Using eBay RESTful APIs&lt;/a&gt; guide. (required)
      * @param  string|null $x_ebay_c_marketplace_id This header identifies the seller&#39;s eBay marketplace. It is required for all marketplaces outside of the US.&lt;br&gt;&lt;br&gt;&lt;span class&#x3D;\&quot;tablenote\&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; If a marketplace ID value is not provided, the default value of &lt;code&gt;EBAY_US&lt;/code&gt; is used.&lt;/span&gt;&lt;br&gt;See &lt;a href&#x3D;\&quot;/api-docs/buy/browse/types/ba:MarketplaceIdEnum\&quot; target&#x3D;\&quot;_blank\&quot;&gt;MarketplaceIdEnum&lt;/a&gt; for supported values. (optional)
      * @param  string|null $accept_language This header is used to indicate the natural language and locale preferred by the user for the response.&lt;br&gt;&lt;br&gt;This header is required when targeting a specific locale of a marketplace that supports multiple locales. For example:&lt;ul&gt;&lt;li&gt;When targeting the French locale of the Belgium marketplace, it is required to pass in &lt;code&gt;fr-BE&lt;/code&gt; to specify this. If this locale is not specified, the language will default to Dutch.&lt;/li&gt;&lt;li&gt;When targeting the French locale of the Canadian marketplace, it is required to pass in &lt;code&gt;fr-CA&lt;/code&gt; to specify this. If this locale is not specified, the language will default to English.&lt;/li&gt;&lt;/ul&gt; (optional)
      * @param  \eBay\Buy\Browse\Model\CompatibilityPayload|null $compatibility_payload (optional)
@@ -396,7 +387,6 @@ class ItemApi
      */
     public function checkCompatibilityRequest(
         $item_id,
-        $content_type,
         $x_ebay_c_marketplace_id = null,
         $accept_language = null,
         $compatibility_payload = null,
@@ -407,13 +397,6 @@ class ItemApi
         if ($item_id === null || (is_array($item_id) && count($item_id) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $item_id when calling checkCompatibility'
-            );
-        }
-
-        // verify the required parameter 'content_type' is set
-        if ($content_type === null || (is_array($content_type) && count($content_type) === 0)) {
-            throw new InvalidArgumentException(
-                'Missing the required parameter $content_type when calling checkCompatibility'
             );
         }
 
@@ -432,10 +415,6 @@ class ItemApi
         // header params
         if ($x_ebay_c_marketplace_id !== null) {
             $headerParams['X-EBAY-C-MARKETPLACE-ID'] = ObjectSerializer::toHeaderValue($x_ebay_c_marketplace_id);
-        }
-        // header params
-        if ($content_type !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($content_type);
         }
         // header params
         if ($accept_language !== null) {

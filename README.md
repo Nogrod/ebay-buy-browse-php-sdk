@@ -59,13 +59,12 @@ $apiInstance = new eBay\Buy\Browse\Api\ItemApi(
     $config
 );
 $item_id = 'item_id_example'; // string | This path parameter specifies the unique RESTful identifier of an item (such as the park you want to check).<br><br><b>RESTful Item ID Format: </b><code>v1</code>|<code><i>#</i></code>|<code><i>#</i></code><br><br>For a single SKU listing, pass in the item ID: <pre>v1|2**********2|0</pre>For a multi-SKU listing, pass in the identifier of the variation:<pre>v1|1**********2|4**********2</pre><br>For more information about item IDs for RESTful APIs, refer to <a href=\"/api-docs/buy/static/api-browse.html#Legacy\" target=\"_blank\">Item ID legacy API compatibility overview</a> in the <a href=\"/api-docs/buy/static/buying-ig-landing.html\" target=\"_blank\">Buying Integration Guide</a>.
-$content_type = 'content_type_example'; // string | This header indicates the format of the request body provided by the client.<br><br>Its value should be set to <code>application/json</code>.<br><br>For more information, refer to <a href=\"/api-docs/static/rest-request-components.html#HTTP\" target=\"_blank \">HTTP request headers</a> in the <a href=\"/api-docs/static/ebay-rest-landing.html\" target=\"_blank\">Using eBay RESTful APIs</a> guide.
 $x_ebay_c_marketplace_id = 'x_ebay_c_marketplace_id_example'; // string | This header identifies the seller's eBay marketplace. It is required for all marketplaces outside of the US.<br><br><span class=\"tablenote\"><b>Note:</b> If a marketplace ID value is not provided, the default value of <code>EBAY_US</code> is used.</span><br>See <a href=\"/api-docs/buy/browse/types/ba:MarketplaceIdEnum\" target=\"_blank\">MarketplaceIdEnum</a> for supported values.
 $accept_language = 'accept_language_example'; // string | This header is used to indicate the natural language and locale preferred by the user for the response.<br><br>This header is required when targeting a specific locale of a marketplace that supports multiple locales. For example:<ul><li>When targeting the French locale of the Belgium marketplace, it is required to pass in <code>fr-BE</code> to specify this. If this locale is not specified, the language will default to Dutch.</li><li>When targeting the French locale of the Canadian marketplace, it is required to pass in <code>fr-CA</code> to specify this. If this locale is not specified, the language will default to English.</li></ul>
 $compatibility_payload = new \eBay\Buy\Browse\Model\CompatibilityPayload(); // \eBay\Buy\Browse\Model\CompatibilityPayload
 
 try {
-    $result = $apiInstance->checkCompatibility($item_id, $content_type, $x_ebay_c_marketplace_id, $accept_language, $compatibility_payload);
+    $result = $apiInstance->checkCompatibility($item_id, $x_ebay_c_marketplace_id, $accept_language, $compatibility_payload);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ItemApi->checkCompatibility: ', $e->getMessage(), PHP_EOL;
