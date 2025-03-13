@@ -23,6 +23,7 @@ docs/Model/BuyingOptionDistribution.md
 docs/Model/Category.md
 docs/Model/CategoryDistribution.md
 docs/Model/CommonDescriptions.md
+docs/Model/CompanyAddress.md
 docs/Model/CompatibilityPayload.md
 docs/Model/CompatibilityProperty.md
 docs/Model/CompatibilityResponse.md
@@ -54,9 +55,13 @@ docs/Model/PaymentMethodBrand.md
 docs/Model/PickupOptionSummary.md
 docs/Model/Product.md
 docs/Model/ProductIdentity.md
+docs/Model/ProductSafetyLabelPictogram.md
+docs/Model/ProductSafetyLabelStatement.md
+docs/Model/ProductSafetyLabels.md
 docs/Model/RatingHistogram.md
 docs/Model/Refinement.md
 docs/Model/Region.md
+docs/Model/ResponsiblePerson.md
 docs/Model/ReviewRating.md
 docs/Model/SearchByImageRequest.md
 docs/Model/SearchPagedCollection.md
@@ -77,9 +82,9 @@ docs/Model/TypedNameValue.md
 docs/Model/VatDetail.md
 git_push.sh
 phpunit.xml.dist
-src/ApiException.php
 src/Api/ItemApi.php
 src/Api/ItemSummaryApi.php
+src/ApiException.php
 src/Configuration.php
 src/HeaderSelector.php
 src/Model/AdditionalProductIdentity.php
@@ -99,6 +104,7 @@ src/Model/BuyingOptionDistribution.php
 src/Model/Category.php
 src/Model/CategoryDistribution.php
 src/Model/CommonDescriptions.php
+src/Model/CompanyAddress.php
 src/Model/CompatibilityPayload.php
 src/Model/CompatibilityProperty.php
 src/Model/CompatibilityResponse.php
@@ -131,9 +137,13 @@ src/Model/PaymentMethodBrand.php
 src/Model/PickupOptionSummary.php
 src/Model/Product.php
 src/Model/ProductIdentity.php
+src/Model/ProductSafetyLabelPictogram.php
+src/Model/ProductSafetyLabelStatement.php
+src/Model/ProductSafetyLabels.php
 src/Model/RatingHistogram.php
 src/Model/Refinement.php
 src/Model/Region.php
+src/Model/ResponsiblePerson.php
 src/Model/ReviewRating.php
 src/Model/SearchByImageRequest.php
 src/Model/SearchPagedCollection.php
