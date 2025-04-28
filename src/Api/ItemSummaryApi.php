@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ItemSummaryApi
  * PHP version 8.1
@@ -168,8 +169,7 @@ class ItemSummaryApi
         ?string $x_ebay_c_marketplace_id = null,
         ?string $accept_language = null,
         string $contentType = self::contentTypes['search'][0]
-    ): \eBay\Buy\Browse\Model\SearchPagedCollection
-    {
+    ): \eBay\Buy\Browse\Model\SearchPagedCollection {
         list($response) = $this->searchWithHttpInfo($aspect_filter, $auto_correct, $category_ids, $charity_ids, $compatibility_filter, $epid, $fieldgroups, $filter, $gtin, $limit, $offset, $q, $sort, $x_ebay_c_enduserctx, $x_ebay_c_marketplace_id, $accept_language, $contentType);
         return $response;
     }
@@ -217,8 +217,7 @@ class ItemSummaryApi
         ?string $x_ebay_c_marketplace_id = null,
         ?string $accept_language = null,
         string $contentType = self::contentTypes['search'][0]
-    ): array
-    {
+    ): array {
         $request = $this->searchRequest($aspect_filter, $auto_correct, $category_ids, $charity_ids, $compatibility_filter, $epid, $fieldgroups, $filter, $gtin, $limit, $offset, $q, $sort, $x_ebay_c_enduserctx, $x_ebay_c_marketplace_id, $accept_language, $contentType);
 
         try {
@@ -244,9 +243,9 @@ class ItemSummaryApi
             $statusCode = $response->getStatusCode();
 
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
-                    if (in_array('\eBay\Buy\Browse\Model\SearchPagedCollection', ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+                    if (in_array('\eBay\Buy\Browse\Model\SearchPagedCollection', ['\SplFileObject', '\Psr\Http\Message\StreamInterface'], true)) {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -288,7 +287,7 @@ class ItemSummaryApi
             }
 
             $returnType = '\eBay\Buy\Browse\Model\SearchPagedCollection';
-            if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+            if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'], true)) {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
@@ -372,8 +371,7 @@ class ItemSummaryApi
         ?string $x_ebay_c_marketplace_id = null,
         ?string $accept_language = null,
         string $contentType = self::contentTypes['search'][0]
-    ): PromiseInterface
-    {
+    ): PromiseInterface {
         return $this->searchAsyncWithHttpInfo($aspect_filter, $auto_correct, $category_ids, $charity_ids, $compatibility_filter, $epid, $fieldgroups, $filter, $gtin, $limit, $offset, $q, $sort, $x_ebay_c_enduserctx, $x_ebay_c_marketplace_id, $accept_language, $contentType)
             ->then(
                 function ($response) {
@@ -424,8 +422,7 @@ class ItemSummaryApi
         ?string $x_ebay_c_marketplace_id = null,
         ?string $accept_language = null,
         string $contentType = self::contentTypes['search'][0]
-    ): PromiseInterface
-    {
+    ): PromiseInterface {
         $returnType = '\eBay\Buy\Browse\Model\SearchPagedCollection';
         $request = $this->searchRequest($aspect_filter, $auto_correct, $category_ids, $charity_ids, $compatibility_filter, $epid, $fieldgroups, $filter, $gtin, $limit, $offset, $q, $sort, $x_ebay_c_enduserctx, $x_ebay_c_marketplace_id, $accept_language, $contentType);
 
@@ -433,7 +430,7 @@ class ItemSummaryApi
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+                    if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'], true)) {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -507,8 +504,7 @@ class ItemSummaryApi
         ?string $x_ebay_c_marketplace_id = null,
         ?string $accept_language = null,
         string $contentType = self::contentTypes['search'][0]
-    ): Request
-    {
+    ): Request {
 
 
 
@@ -759,8 +755,7 @@ class ItemSummaryApi
         ?string $accept_language = null,
         ?\eBay\Buy\Browse\Model\SearchByImageRequest $search_by_image_request = null,
         string $contentType = self::contentTypes['searchByImage'][0]
-    ): \eBay\Buy\Browse\Model\SearchPagedCollection
-    {
+    ): \eBay\Buy\Browse\Model\SearchPagedCollection {
         list($response) = $this->searchByImageWithHttpInfo($aspect_filter, $category_ids, $charity_ids, $fieldgroups, $filter, $limit, $offset, $sort, $x_ebay_c_enduserctx, $x_ebay_c_marketplace_id, $accept_language, $search_by_image_request, $contentType);
         return $response;
     }
@@ -800,8 +795,7 @@ class ItemSummaryApi
         ?string $accept_language = null,
         ?\eBay\Buy\Browse\Model\SearchByImageRequest $search_by_image_request = null,
         string $contentType = self::contentTypes['searchByImage'][0]
-    ): array
-    {
+    ): array {
         $request = $this->searchByImageRequest($aspect_filter, $category_ids, $charity_ids, $fieldgroups, $filter, $limit, $offset, $sort, $x_ebay_c_enduserctx, $x_ebay_c_marketplace_id, $accept_language, $search_by_image_request, $contentType);
 
         try {
@@ -827,9 +821,9 @@ class ItemSummaryApi
             $statusCode = $response->getStatusCode();
 
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
-                    if (in_array('\eBay\Buy\Browse\Model\SearchPagedCollection', ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+                    if (in_array('\eBay\Buy\Browse\Model\SearchPagedCollection', ['\SplFileObject', '\Psr\Http\Message\StreamInterface'], true)) {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -871,7 +865,7 @@ class ItemSummaryApi
             }
 
             $returnType = '\eBay\Buy\Browse\Model\SearchPagedCollection';
-            if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+            if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'], true)) {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
@@ -947,8 +941,7 @@ class ItemSummaryApi
         ?string $accept_language = null,
         ?\eBay\Buy\Browse\Model\SearchByImageRequest $search_by_image_request = null,
         string $contentType = self::contentTypes['searchByImage'][0]
-    ): PromiseInterface
-    {
+    ): PromiseInterface {
         return $this->searchByImageAsyncWithHttpInfo($aspect_filter, $category_ids, $charity_ids, $fieldgroups, $filter, $limit, $offset, $sort, $x_ebay_c_enduserctx, $x_ebay_c_marketplace_id, $accept_language, $search_by_image_request, $contentType)
             ->then(
                 function ($response) {
@@ -991,8 +984,7 @@ class ItemSummaryApi
         ?string $accept_language = null,
         ?\eBay\Buy\Browse\Model\SearchByImageRequest $search_by_image_request = null,
         string $contentType = self::contentTypes['searchByImage'][0]
-    ): PromiseInterface
-    {
+    ): PromiseInterface {
         $returnType = '\eBay\Buy\Browse\Model\SearchPagedCollection';
         $request = $this->searchByImageRequest($aspect_filter, $category_ids, $charity_ids, $fieldgroups, $filter, $limit, $offset, $sort, $x_ebay_c_enduserctx, $x_ebay_c_marketplace_id, $accept_language, $search_by_image_request, $contentType);
 
@@ -1000,7 +992,7 @@ class ItemSummaryApi
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+                    if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'], true)) {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -1066,8 +1058,7 @@ class ItemSummaryApi
         ?string $accept_language = null,
         ?\eBay\Buy\Browse\Model\SearchByImageRequest $search_by_image_request = null,
         string $contentType = self::contentTypes['searchByImage'][0]
-    ): Request
-    {
+    ): Request {
 
 
 

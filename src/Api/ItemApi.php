@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ItemApi
  * PHP version 8.1
@@ -153,8 +154,7 @@ class ItemApi
         ?string $accept_language = null,
         ?\eBay\Buy\Browse\Model\CompatibilityPayload $compatibility_payload = null,
         string $contentType = self::contentTypes['checkCompatibility'][0]
-    ): \eBay\Buy\Browse\Model\CompatibilityResponse
-    {
+    ): \eBay\Buy\Browse\Model\CompatibilityResponse {
         list($response) = $this->checkCompatibilityWithHttpInfo($item_id, $x_ebay_c_marketplace_id, $accept_language, $compatibility_payload, $contentType);
         return $response;
     }
@@ -178,8 +178,7 @@ class ItemApi
         ?string $accept_language = null,
         ?\eBay\Buy\Browse\Model\CompatibilityPayload $compatibility_payload = null,
         string $contentType = self::contentTypes['checkCompatibility'][0]
-    ): array
-    {
+    ): array {
         $request = $this->checkCompatibilityRequest($item_id, $x_ebay_c_marketplace_id, $accept_language, $compatibility_payload, $contentType);
 
         try {
@@ -205,9 +204,9 @@ class ItemApi
             $statusCode = $response->getStatusCode();
 
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
-                    if (in_array('\eBay\Buy\Browse\Model\CompatibilityResponse', ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+                    if (in_array('\eBay\Buy\Browse\Model\CompatibilityResponse', ['\SplFileObject', '\Psr\Http\Message\StreamInterface'], true)) {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -249,7 +248,7 @@ class ItemApi
             }
 
             $returnType = '\eBay\Buy\Browse\Model\CompatibilityResponse';
-            if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+            if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'], true)) {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
@@ -309,8 +308,7 @@ class ItemApi
         ?string $accept_language = null,
         ?\eBay\Buy\Browse\Model\CompatibilityPayload $compatibility_payload = null,
         string $contentType = self::contentTypes['checkCompatibility'][0]
-    ): PromiseInterface
-    {
+    ): PromiseInterface {
         return $this->checkCompatibilityAsyncWithHttpInfo($item_id, $x_ebay_c_marketplace_id, $accept_language, $compatibility_payload, $contentType)
             ->then(
                 function ($response) {
@@ -337,8 +335,7 @@ class ItemApi
         ?string $accept_language = null,
         ?\eBay\Buy\Browse\Model\CompatibilityPayload $compatibility_payload = null,
         string $contentType = self::contentTypes['checkCompatibility'][0]
-    ): PromiseInterface
-    {
+    ): PromiseInterface {
         $returnType = '\eBay\Buy\Browse\Model\CompatibilityResponse';
         $request = $this->checkCompatibilityRequest($item_id, $x_ebay_c_marketplace_id, $accept_language, $compatibility_payload, $contentType);
 
@@ -346,7 +343,7 @@ class ItemApi
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+                    if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'], true)) {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -396,8 +393,7 @@ class ItemApi
         ?string $accept_language = null,
         ?\eBay\Buy\Browse\Model\CompatibilityPayload $compatibility_payload = null,
         string $contentType = self::contentTypes['checkCompatibility'][0]
-    ): Request
-    {
+    ): Request {
 
         // verify the required parameter 'item_id' is set
         if ($item_id === null || (is_array($item_id) && count($item_id) === 0)) {
@@ -524,8 +520,7 @@ class ItemApi
         ?string $accept_language = null,
         ?string $quantity_for_shipping_estimate = null,
         string $contentType = self::contentTypes['getItem'][0]
-    ): \eBay\Buy\Browse\Model\Item
-    {
+    ): \eBay\Buy\Browse\Model\Item {
         list($response) = $this->getItemWithHttpInfo($item_id, $fieldgroups, $x_ebay_c_enduserctx, $x_ebay_c_marketplace_id, $accept_language, $quantity_for_shipping_estimate, $contentType);
         return $response;
     }
@@ -553,8 +548,7 @@ class ItemApi
         ?string $accept_language = null,
         ?string $quantity_for_shipping_estimate = null,
         string $contentType = self::contentTypes['getItem'][0]
-    ): array
-    {
+    ): array {
         $request = $this->getItemRequest($item_id, $fieldgroups, $x_ebay_c_enduserctx, $x_ebay_c_marketplace_id, $accept_language, $quantity_for_shipping_estimate, $contentType);
 
         try {
@@ -580,9 +574,9 @@ class ItemApi
             $statusCode = $response->getStatusCode();
 
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
-                    if (in_array('\eBay\Buy\Browse\Model\Item', ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+                    if (in_array('\eBay\Buy\Browse\Model\Item', ['\SplFileObject', '\Psr\Http\Message\StreamInterface'], true)) {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -624,7 +618,7 @@ class ItemApi
             }
 
             $returnType = '\eBay\Buy\Browse\Model\Item';
-            if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+            if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'], true)) {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
@@ -688,8 +682,7 @@ class ItemApi
         ?string $accept_language = null,
         ?string $quantity_for_shipping_estimate = null,
         string $contentType = self::contentTypes['getItem'][0]
-    ): PromiseInterface
-    {
+    ): PromiseInterface {
         return $this->getItemAsyncWithHttpInfo($item_id, $fieldgroups, $x_ebay_c_enduserctx, $x_ebay_c_marketplace_id, $accept_language, $quantity_for_shipping_estimate, $contentType)
             ->then(
                 function ($response) {
@@ -720,8 +713,7 @@ class ItemApi
         ?string $accept_language = null,
         ?string $quantity_for_shipping_estimate = null,
         string $contentType = self::contentTypes['getItem'][0]
-    ): PromiseInterface
-    {
+    ): PromiseInterface {
         $returnType = '\eBay\Buy\Browse\Model\Item';
         $request = $this->getItemRequest($item_id, $fieldgroups, $x_ebay_c_enduserctx, $x_ebay_c_marketplace_id, $accept_language, $quantity_for_shipping_estimate, $contentType);
 
@@ -729,7 +721,7 @@ class ItemApi
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+                    if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'], true)) {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -783,8 +775,7 @@ class ItemApi
         ?string $accept_language = null,
         ?string $quantity_for_shipping_estimate = null,
         string $contentType = self::contentTypes['getItem'][0]
-    ): Request
-    {
+    ): Request {
 
         // verify the required parameter 'item_id' is set
         if ($item_id === null || (is_array($item_id) && count($item_id) === 0)) {
@@ -932,8 +923,7 @@ class ItemApi
         ?string $accept_language = null,
         ?string $quantity_for_shipping_estimate = null,
         string $contentType = self::contentTypes['getItemByLegacyId'][0]
-    ): \eBay\Buy\Browse\Model\Item
-    {
+    ): \eBay\Buy\Browse\Model\Item {
         list($response) = $this->getItemByLegacyIdWithHttpInfo($legacy_item_id, $fieldgroups, $legacy_variation_id, $legacy_variation_sku, $x_ebay_c_enduserctx, $x_ebay_c_marketplace_id, $accept_language, $quantity_for_shipping_estimate, $contentType);
         return $response;
     }
@@ -965,8 +955,7 @@ class ItemApi
         ?string $accept_language = null,
         ?string $quantity_for_shipping_estimate = null,
         string $contentType = self::contentTypes['getItemByLegacyId'][0]
-    ): array
-    {
+    ): array {
         $request = $this->getItemByLegacyIdRequest($legacy_item_id, $fieldgroups, $legacy_variation_id, $legacy_variation_sku, $x_ebay_c_enduserctx, $x_ebay_c_marketplace_id, $accept_language, $quantity_for_shipping_estimate, $contentType);
 
         try {
@@ -992,9 +981,9 @@ class ItemApi
             $statusCode = $response->getStatusCode();
 
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
-                    if (in_array('\eBay\Buy\Browse\Model\Item', ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+                    if (in_array('\eBay\Buy\Browse\Model\Item', ['\SplFileObject', '\Psr\Http\Message\StreamInterface'], true)) {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -1036,7 +1025,7 @@ class ItemApi
             }
 
             $returnType = '\eBay\Buy\Browse\Model\Item';
-            if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+            if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'], true)) {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
@@ -1104,8 +1093,7 @@ class ItemApi
         ?string $accept_language = null,
         ?string $quantity_for_shipping_estimate = null,
         string $contentType = self::contentTypes['getItemByLegacyId'][0]
-    ): PromiseInterface
-    {
+    ): PromiseInterface {
         return $this->getItemByLegacyIdAsyncWithHttpInfo($legacy_item_id, $fieldgroups, $legacy_variation_id, $legacy_variation_sku, $x_ebay_c_enduserctx, $x_ebay_c_marketplace_id, $accept_language, $quantity_for_shipping_estimate, $contentType)
             ->then(
                 function ($response) {
@@ -1140,8 +1128,7 @@ class ItemApi
         ?string $accept_language = null,
         ?string $quantity_for_shipping_estimate = null,
         string $contentType = self::contentTypes['getItemByLegacyId'][0]
-    ): PromiseInterface
-    {
+    ): PromiseInterface {
         $returnType = '\eBay\Buy\Browse\Model\Item';
         $request = $this->getItemByLegacyIdRequest($legacy_item_id, $fieldgroups, $legacy_variation_id, $legacy_variation_sku, $x_ebay_c_enduserctx, $x_ebay_c_marketplace_id, $accept_language, $quantity_for_shipping_estimate, $contentType);
 
@@ -1149,7 +1136,7 @@ class ItemApi
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+                    if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'], true)) {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -1207,8 +1194,7 @@ class ItemApi
         ?string $accept_language = null,
         ?string $quantity_for_shipping_estimate = null,
         string $contentType = self::contentTypes['getItemByLegacyId'][0]
-    ): Request
-    {
+    ): Request {
 
         // verify the required parameter 'legacy_item_id' is set
         if ($legacy_item_id === null || (is_array($legacy_item_id) && count($legacy_item_id) === 0)) {
@@ -1373,8 +1359,7 @@ class ItemApi
         ?string $accept_language = null,
         ?string $quantity_for_shipping_estimate = null,
         string $contentType = self::contentTypes['getItems'][0]
-    ): \eBay\Buy\Browse\Model\Items
-    {
+    ): \eBay\Buy\Browse\Model\Items {
         list($response) = $this->getItemsWithHttpInfo($item_ids, $item_group_ids, $x_ebay_c_enduserctx, $x_ebay_c_marketplace_id, $accept_language, $quantity_for_shipping_estimate, $contentType);
         return $response;
     }
@@ -1402,8 +1387,7 @@ class ItemApi
         ?string $accept_language = null,
         ?string $quantity_for_shipping_estimate = null,
         string $contentType = self::contentTypes['getItems'][0]
-    ): array
-    {
+    ): array {
         $request = $this->getItemsRequest($item_ids, $item_group_ids, $x_ebay_c_enduserctx, $x_ebay_c_marketplace_id, $accept_language, $quantity_for_shipping_estimate, $contentType);
 
         try {
@@ -1429,9 +1413,9 @@ class ItemApi
             $statusCode = $response->getStatusCode();
 
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
-                    if (in_array('\eBay\Buy\Browse\Model\Items', ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+                    if (in_array('\eBay\Buy\Browse\Model\Items', ['\SplFileObject', '\Psr\Http\Message\StreamInterface'], true)) {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -1473,7 +1457,7 @@ class ItemApi
             }
 
             $returnType = '\eBay\Buy\Browse\Model\Items';
-            if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+            if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'], true)) {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
@@ -1537,8 +1521,7 @@ class ItemApi
         ?string $accept_language = null,
         ?string $quantity_for_shipping_estimate = null,
         string $contentType = self::contentTypes['getItems'][0]
-    ): PromiseInterface
-    {
+    ): PromiseInterface {
         return $this->getItemsAsyncWithHttpInfo($item_ids, $item_group_ids, $x_ebay_c_enduserctx, $x_ebay_c_marketplace_id, $accept_language, $quantity_for_shipping_estimate, $contentType)
             ->then(
                 function ($response) {
@@ -1569,8 +1552,7 @@ class ItemApi
         ?string $accept_language = null,
         ?string $quantity_for_shipping_estimate = null,
         string $contentType = self::contentTypes['getItems'][0]
-    ): PromiseInterface
-    {
+    ): PromiseInterface {
         $returnType = '\eBay\Buy\Browse\Model\Items';
         $request = $this->getItemsRequest($item_ids, $item_group_ids, $x_ebay_c_enduserctx, $x_ebay_c_marketplace_id, $accept_language, $quantity_for_shipping_estimate, $contentType);
 
@@ -1578,7 +1560,7 @@ class ItemApi
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+                    if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'], true)) {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -1632,8 +1614,7 @@ class ItemApi
         ?string $accept_language = null,
         ?string $quantity_for_shipping_estimate = null,
         string $contentType = self::contentTypes['getItems'][0]
-    ): Request
-    {
+    ): Request {
 
 
 
@@ -1772,8 +1753,7 @@ class ItemApi
         ?string $accept_language = null,
         ?string $quantity_for_shipping_estimate = null,
         string $contentType = self::contentTypes['getItemsByItemGroup'][0]
-    ): \eBay\Buy\Browse\Model\ItemGroup
-    {
+    ): \eBay\Buy\Browse\Model\ItemGroup {
         list($response) = $this->getItemsByItemGroupWithHttpInfo($item_group_id, $fieldgroups, $x_ebay_c_enduserctx, $x_ebay_c_marketplace_id, $accept_language, $quantity_for_shipping_estimate, $contentType);
         return $response;
     }
@@ -1801,8 +1781,7 @@ class ItemApi
         ?string $accept_language = null,
         ?string $quantity_for_shipping_estimate = null,
         string $contentType = self::contentTypes['getItemsByItemGroup'][0]
-    ): array
-    {
+    ): array {
         $request = $this->getItemsByItemGroupRequest($item_group_id, $fieldgroups, $x_ebay_c_enduserctx, $x_ebay_c_marketplace_id, $accept_language, $quantity_for_shipping_estimate, $contentType);
 
         try {
@@ -1828,9 +1807,9 @@ class ItemApi
             $statusCode = $response->getStatusCode();
 
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
-                    if (in_array('\eBay\Buy\Browse\Model\ItemGroup', ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+                    if (in_array('\eBay\Buy\Browse\Model\ItemGroup', ['\SplFileObject', '\Psr\Http\Message\StreamInterface'], true)) {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -1872,7 +1851,7 @@ class ItemApi
             }
 
             $returnType = '\eBay\Buy\Browse\Model\ItemGroup';
-            if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+            if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'], true)) {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
@@ -1936,8 +1915,7 @@ class ItemApi
         ?string $accept_language = null,
         ?string $quantity_for_shipping_estimate = null,
         string $contentType = self::contentTypes['getItemsByItemGroup'][0]
-    ): PromiseInterface
-    {
+    ): PromiseInterface {
         return $this->getItemsByItemGroupAsyncWithHttpInfo($item_group_id, $fieldgroups, $x_ebay_c_enduserctx, $x_ebay_c_marketplace_id, $accept_language, $quantity_for_shipping_estimate, $contentType)
             ->then(
                 function ($response) {
@@ -1968,8 +1946,7 @@ class ItemApi
         ?string $accept_language = null,
         ?string $quantity_for_shipping_estimate = null,
         string $contentType = self::contentTypes['getItemsByItemGroup'][0]
-    ): PromiseInterface
-    {
+    ): PromiseInterface {
         $returnType = '\eBay\Buy\Browse\Model\ItemGroup';
         $request = $this->getItemsByItemGroupRequest($item_group_id, $fieldgroups, $x_ebay_c_enduserctx, $x_ebay_c_marketplace_id, $accept_language, $quantity_for_shipping_estimate, $contentType);
 
@@ -1977,7 +1954,7 @@ class ItemApi
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+                    if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'], true)) {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -2031,8 +2008,7 @@ class ItemApi
         ?string $accept_language = null,
         ?string $quantity_for_shipping_estimate = null,
         string $contentType = self::contentTypes['getItemsByItemGroup'][0]
-    ): Request
-    {
+    ): Request {
 
         // verify the required parameter 'item_group_id' is set
         if ($item_group_id === null || (is_array($item_group_id) && count($item_group_id) === 0)) {
