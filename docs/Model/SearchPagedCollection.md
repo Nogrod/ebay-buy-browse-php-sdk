@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **auto_corrections** | [**\eBay\Buy\Browse\Model\AutoCorrections**](AutoCorrections.md) |  | [optional]
-**href** | **string** | The URI of the current page of results.&lt;br&gt;&lt;br&gt;The following example of the &lt;b&gt;search&lt;/b&gt; method returns items 1 thru 5 from the list of items found.&lt;pre&gt;https://api.ebay.com/buy/v1/item_summary/search?q&#x3D;shirt&amp;limit&#x3D;5&amp;offset&#x3D;0&lt;/pre&gt;. | [optional]
+**href** | **string** | The URI of the current page of results.&lt;br&gt;&lt;br&gt;The following example of the &lt;b&gt;search&lt;/b&gt; method returns items 1 thru 5 from the list of items found.&lt;pre&gt;https://api.ebay.com/buy/v1/item_summary/search?q&#x3D;shirt&amp;limit&#x3D;5&amp;offset&#x3D;0&lt;/pre&gt; | [optional]
 **item_summaries** | [**\eBay\Buy\Browse\Model\ItemSummary[]**](ItemSummary.md) | An array of the items on this page. The items are sorted according to the sorting method specified in the request. | [optional]
 **limit** | **int** | The value of the &lt;code&gt;limit&lt;/code&gt; parameter submitted in the request, which is the maximum number of items to return on a page, from the result set. A result set is the complete set of items returned by the method. | [optional]
 **next** | **string** | The URI for the next page of results. This value is returned if there is an additional page of results to return from the result set.&lt;br&gt;&lt;br&gt;The following example of the &lt;b&gt;search&lt;/b&gt; method returns items 5 thru 10 from the list of items found.&lt;pre&gt;https://api.ebay.com/buy/v1/item_summary/search?query&#x3D;t-shirts&amp;limit&#x3D;5&amp;offset&#x3D;10&lt;/pre&gt; | [optional]

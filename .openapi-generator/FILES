@@ -85,6 +85,7 @@ src/Api/ItemApi.php
 src/Api/ItemSummaryApi.php
 src/ApiException.php
 src/Configuration.php
+src/FormDataProcessor.php
 src/HeaderSelector.php
 src/Model/AdditionalProductIdentity.php
 src/Model/AddonService.php
