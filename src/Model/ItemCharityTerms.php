@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Seller
+ * ItemCharityTerms
  *
  * PHP version 8.1
  *
@@ -35,15 +35,15 @@ use ReturnTypeWillChange;
 use eBay\Buy\Browse\ObjectSerializer;
 
 /**
- * Seller Class Doc Comment
+ * ItemCharityTerms Class Doc Comment
  *
- * @description The type that defines the fields for basic information about the seller of the item returned by the &lt;code&gt;item_summary&lt;/code&gt; resource.
+ * @description This type defines the fields for any applicable charity information associated with an item.
  * @package  eBay\Buy\Browse
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements ArrayAccess<string, mixed>
  */
-class Seller implements ModelInterface, ArrayAccess, JsonSerializable
+class ItemCharityTerms implements ModelInterface, ArrayAccess, JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +52,7 @@ class Seller implements ModelInterface, ArrayAccess, JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'Seller';
+    protected static string $openAPIModelName = 'ItemCharityTerms';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,10 +60,11 @@ class Seller implements ModelInterface, ArrayAccess, JsonSerializable
       * @var array<string, string>
       */
     protected static array $openAPITypes = [
-        'feedback_percentage' => 'string',
-        'feedback_score' => 'int',
-        'seller_account_type' => 'string',
-        'username' => 'string'
+        'charity_org_id' => 'string',
+        'donation_percentage' => 'float',
+        'logo_image' => '\eBay\Buy\Browse\Model\Image',
+        'name' => 'string',
+        'website' => 'string'
     ];
 
     /**
@@ -72,10 +73,11 @@ class Seller implements ModelInterface, ArrayAccess, JsonSerializable
       * @var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'feedback_percentage' => null,
-        'feedback_score' => 'int32',
-        'seller_account_type' => null,
-        'username' => null
+        'charity_org_id' => null,
+        'donation_percentage' => null,
+        'logo_image' => null,
+        'name' => null,
+        'website' => null
     ];
 
     /**
@@ -84,10 +86,11 @@ class Seller implements ModelInterface, ArrayAccess, JsonSerializable
       * @var array<string, bool>
       */
     protected static array $openAPINullables = [
-        'feedback_percentage' => false,
-        'feedback_score' => false,
-        'seller_account_type' => false,
-        'username' => false
+        'charity_org_id' => false,
+        'donation_percentage' => false,
+        'logo_image' => false,
+        'name' => false,
+        'website' => false
     ];
 
     /**
@@ -176,10 +179,11 @@ class Seller implements ModelInterface, ArrayAccess, JsonSerializable
      * @var array<string, string>
      */
     protected static array $attributeMap = [
-        'feedback_percentage' => 'feedbackPercentage',
-        'feedback_score' => 'feedbackScore',
-        'seller_account_type' => 'sellerAccountType',
-        'username' => 'username'
+        'charity_org_id' => 'charityOrgId',
+        'donation_percentage' => 'donationPercentage',
+        'logo_image' => 'LogoImage',
+        'name' => 'name',
+        'website' => 'website'
     ];
 
     /**
@@ -188,10 +192,11 @@ class Seller implements ModelInterface, ArrayAccess, JsonSerializable
      * @var array<string, string>
      */
     protected static array $setters = [
-        'feedback_percentage' => 'setFeedbackPercentage',
-        'feedback_score' => 'setFeedbackScore',
-        'seller_account_type' => 'setSellerAccountType',
-        'username' => 'setUsername'
+        'charity_org_id' => 'setCharityOrgId',
+        'donation_percentage' => 'setDonationPercentage',
+        'logo_image' => 'setLogoImage',
+        'name' => 'setName',
+        'website' => 'setWebsite'
     ];
 
     /**
@@ -200,10 +205,11 @@ class Seller implements ModelInterface, ArrayAccess, JsonSerializable
      * @var array<string, string>
      */
     protected static array $getters = [
-        'feedback_percentage' => 'getFeedbackPercentage',
-        'feedback_score' => 'getFeedbackScore',
-        'seller_account_type' => 'getSellerAccountType',
-        'username' => 'getUsername'
+        'charity_org_id' => 'getCharityOrgId',
+        'donation_percentage' => 'getDonationPercentage',
+        'logo_image' => 'getLogoImage',
+        'name' => 'getName',
+        'website' => 'getWebsite'
     ];
 
     /**
@@ -262,10 +268,11 @@ class Seller implements ModelInterface, ArrayAccess, JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('feedback_percentage', $data ?? [], null);
-        $this->setIfExists('feedback_score', $data ?? [], null);
-        $this->setIfExists('seller_account_type', $data ?? [], null);
-        $this->setIfExists('username', $data ?? [], null);
+        $this->setIfExists('charity_org_id', $data ?? [], null);
+        $this->setIfExists('donation_percentage', $data ?? [], null);
+        $this->setIfExists('logo_image', $data ?? [], null);
+        $this->setIfExists('name', $data ?? [], null);
+        $this->setIfExists('website', $data ?? [], null);
     }
 
     /**
@@ -311,109 +318,136 @@ class Seller implements ModelInterface, ArrayAccess, JsonSerializable
 
 
     /**
-     * Gets feedback_percentage
+     * Gets charity_org_id
      *
      * @return string|null
      */
-    public function getFeedbackPercentage(): ?string
+    public function getCharityOrgId(): ?string
     {
-        return $this->container['feedback_percentage'];
+        return $this->container['charity_org_id'];
     }
 
     /**
-     * Sets feedback_percentage
+     * Sets charity_org_id
      *
-     * @param string|null $feedback_percentage The percentage of the total positive feedback.
+     * @param string|null $charity_org_id The eBay-assigned unique identifier of the charitable organization that will receive a percentage of the sales proceeds from the item.
      *
      * @return $this
      */
-    public function setFeedbackPercentage(?string $feedback_percentage): static
+    public function setCharityOrgId(?string $charity_org_id): static
     {
-        if (is_null($feedback_percentage)) {
-            throw new InvalidArgumentException('non-nullable feedback_percentage cannot be null');
+        if (is_null($charity_org_id)) {
+            throw new InvalidArgumentException('non-nullable charity_org_id cannot be null');
         }
-        $this->container['feedback_percentage'] = $feedback_percentage;
+        $this->container['charity_org_id'] = $charity_org_id;
 
         return $this;
     }
 
     /**
-     * Gets feedback_score
+     * Gets donation_percentage
      *
-     * @return int|null
+     * @return float|null
      */
-    public function getFeedbackScore(): ?int
+    public function getDonationPercentage(): ?float
     {
-        return $this->container['feedback_score'];
+        return $this->container['donation_percentage'];
     }
 
     /**
-     * Sets feedback_score
+     * Sets donation_percentage
      *
-     * @param int|null $feedback_score The feedback score of the seller. This value is based on the ratings from eBay members that bought items from this seller.
+     * @param float|null $donation_percentage The percentage of the purchase price of the item that the charitable organization (identified in the <b>charityOrgId</b> field) will receive for each sale.
      *
      * @return $this
      */
-    public function setFeedbackScore(?int $feedback_score): static
+    public function setDonationPercentage(?float $donation_percentage): static
     {
-        if (is_null($feedback_score)) {
-            throw new InvalidArgumentException('non-nullable feedback_score cannot be null');
+        if (is_null($donation_percentage)) {
+            throw new InvalidArgumentException('non-nullable donation_percentage cannot be null');
         }
-        $this->container['feedback_score'] = $feedback_score;
+        $this->container['donation_percentage'] = $donation_percentage;
 
         return $this;
     }
 
     /**
-     * Gets seller_account_type
+     * Gets logo_image
      *
-     * @return string|null
+     * @return \eBay\Buy\Browse\Model\Image|null
      */
-    public function getSellerAccountType(): ?string
+    public function getLogoImage(): ?\eBay\Buy\Browse\Model\Image
     {
-        return $this->container['seller_account_type'];
+        return $this->container['logo_image'];
     }
 
     /**
-     * Sets seller_account_type
+     * Sets logo_image
      *
-     * @param string|null $seller_account_type Indicates if the seller is a business or an individual. This is determined when the seller registers with eBay:<ul><li>If they register for a business account, this value will be <code>BUSINESS</code>.</li><li>If they register for a private account, this value will be <code>INDIVIDUAL</code>.</li></ul>This designation is required by the tax laws in some countries.<br><br>This field is returned only on the following sites:<br><br>EBAY_AT, EBAY_BE, EBAY_CH, EBAY_DE, EBAY_ES, EBAY_FR, EBAY_GB, EBAY_IE, EBAY_IT, EBAY_PL<br><br><b>Valid Values:</b> <code>BUSINESS</code> or <code>INDIVIDUAL</code>
+     * @param \eBay\Buy\Browse\Model\Image|null $logo_image logo_image
      *
      * @return $this
      */
-    public function setSellerAccountType(?string $seller_account_type): static
+    public function setLogoImage(?\eBay\Buy\Browse\Model\Image $logo_image): static
     {
-        if (is_null($seller_account_type)) {
-            throw new InvalidArgumentException('non-nullable seller_account_type cannot be null');
+        if (is_null($logo_image)) {
+            throw new InvalidArgumentException('non-nullable logo_image cannot be null');
         }
-        $this->container['seller_account_type'] = $seller_account_type;
+        $this->container['logo_image'] = $logo_image;
 
         return $this;
     }
 
     /**
-     * Gets username
+     * Gets name
      *
      * @return string|null
      */
-    public function getUsername(): ?string
+    public function getName(): ?string
     {
-        return $this->container['username'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets username
+     * Sets name
      *
-     * @param string|null $username The user name created by the seller for use on eBay.
+     * @param string|null $name The name of the charity organization.
      *
      * @return $this
      */
-    public function setUsername(?string $username): static
+    public function setName(?string $name): static
     {
-        if (is_null($username)) {
-            throw new InvalidArgumentException('non-nullable username cannot be null');
+        if (is_null($name)) {
+            throw new InvalidArgumentException('non-nullable name cannot be null');
         }
-        $this->container['username'] = $username;
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets website
+     *
+     * @return string|null
+     */
+    public function getWebsite(): ?string
+    {
+        return $this->container['website'];
+    }
+
+    /**
+     * Sets website
+     *
+     * @param string|null $website The URL to the charity's eBay page.
+     *
+     * @return $this
+     */
+    public function setWebsite(?string $website): static
+    {
+        if (is_null($website)) {
+            throw new InvalidArgumentException('non-nullable website cannot be null');
+        }
+        $this->container['website'] = $website;
 
         return $this;
     }

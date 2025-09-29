@@ -41,6 +41,7 @@ docs/Model/HazardStatement.md
 docs/Model/HazardousMaterialsLabels.md
 docs/Model/Image.md
 docs/Model/Item.md
+docs/Model/ItemCharityTerms.md
 docs/Model/ItemGroup.md
 docs/Model/ItemGroupSummary.md
 docs/Model/ItemLocationImpl.md
@@ -123,6 +124,7 @@ src/Model/HazardStatement.php
 src/Model/HazardousMaterialsLabels.php
 src/Model/Image.php
 src/Model/Item.php
+src/Model/ItemCharityTerms.php
 src/Model/ItemGroup.php
 src/Model/ItemGroupSummary.php
 src/Model/ItemLocationImpl.php
@@ -163,3 +165,4 @@ src/Model/TimeDuration.php
 src/Model/TypedNameValue.php
 src/Model/VatDetail.php
 src/ObjectSerializer.php
+tests/Model/ItemCharityTermsTest.php
