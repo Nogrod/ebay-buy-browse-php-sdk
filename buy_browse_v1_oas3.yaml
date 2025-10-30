@@ -20,7 +20,7 @@ info:
   license:
     name: "eBay API License Agreement"
     url: "https://developer.ebay.com/join/api-license-agreement"
-  version: "v1.20.3"
+  version: "v1.20.4"
 servers:
 - url: "https://api.ebay.com{basePath}"
   description: "Production"
@@ -419,6 +419,13 @@ paths:
                 category: "REQUEST"
                 description: "A seller 'username' provided in the request filters\
                   \ is invalid."
+              12519:
+                domain: "API_BROWSE"
+                category: "REQUEST"
+                description: "The '{fieldName}' value '{filterValue}' is not supported\
+                  \ with 'deliveryCountry' '{deliveryCountry}' on marketplace '{marketplaceId}'.\
+                  \ The region filter will be ignored and results will follow the\
+                  \ site's default location behavior."
               12008:
                 domain: "API_BROWSE"
                 category: "REQUEST"
@@ -5346,7 +5353,9 @@ components:
             \ which you can convert into the local time of the buyer.<br><br><span\
             \ class=\"tablenote\"> <b>Note: </b> For the best accuracy, always include\
             \ the <code>contextualLocation</code> values in the <a href=\"/api-docs/buy/static/api-browse.html#Headers\"\
-            \ target=\"_blank\"><code>X-EBAY-C-ENDUSERCTX</code></a> request header.</span>"
+            \ target=\"_blank\"><code>X-EBAY-C-ENDUSERCTX</code></a> request header.</span><br><span\
+            \ class=\"tablenote\"> <b>Note: </b> Estimated delivery dates are not\
+            \ returned for CBT items.</span>"
         minEstimatedDeliveryDate:
           type: "string"
           description: "The start date of the delivery window (earliest projected\
@@ -5354,7 +5363,9 @@ components:
             \ which you can convert into the local time of the buyer.<br><br><span\
             \ class=\"tablenote\"><b>Note:</b> For the best accuracy, always include\
             \ the <code>contextualLocation</code> values in the <a href=\"/api-docs/buy/static/api-browse.html#Headers\"\
-            \ target=\"_blank\"><code>X-EBAY-C-ENDUSERCTX</code></a> request header.</span>"
+            \ target=\"_blank\"><code>X-EBAY-C-ENDUSERCTX</code></a> request header.</span><br><span\
+            \ class=\"tablenote\"> <b>Note: </b> Estimated delivery dates are not\
+            \ returned for CBT items.</span>"
         shippingCost:
           description: "This is the estimated price to ship the item.<br><br>The price\
             \ includes the value-added tax (VAT) for applicable jurisdictions when\

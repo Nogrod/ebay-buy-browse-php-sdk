@@ -165,4 +165,3 @@ src/Model/TimeDuration.php
 src/Model/TypedNameValue.php
 src/Model/VatDetail.php
 src/ObjectSerializer.php
-tests/Model/ItemCharityTermsTest.php
