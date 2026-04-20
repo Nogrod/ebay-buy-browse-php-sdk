@@ -1,4 +1,4 @@
-# # AspectDistribution
+# AspectDistribution
 
 ## Properties
 

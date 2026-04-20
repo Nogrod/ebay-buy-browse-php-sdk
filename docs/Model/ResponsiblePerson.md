@@ -1,4 +1,4 @@
-# # ResponsiblePerson
+# ResponsiblePerson
 
 ## Properties
 

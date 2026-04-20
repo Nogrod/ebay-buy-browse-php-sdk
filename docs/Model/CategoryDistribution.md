@@ -1,4 +1,4 @@
-# # CategoryDistribution
+# CategoryDistribution
 
 ## Properties
 

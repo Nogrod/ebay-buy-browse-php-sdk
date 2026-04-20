@@ -1,4 +1,4 @@
-# # Aspect
+# Aspect
 
 ## Properties
 

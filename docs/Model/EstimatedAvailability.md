@@ -1,4 +1,4 @@
-# # EstimatedAvailability
+# EstimatedAvailability
 
 ## Properties
 

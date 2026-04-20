@@ -1,4 +1,4 @@
-# # TypedNameValue
+# TypedNameValue
 
 ## Properties
 

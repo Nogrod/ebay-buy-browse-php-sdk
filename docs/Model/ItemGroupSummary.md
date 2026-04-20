@@ -1,4 +1,4 @@
-# # ItemGroupSummary
+# ItemGroupSummary
 
 ## Properties
 

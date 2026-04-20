@@ -1,4 +1,4 @@
-# # ProductSafetyLabels
+# ProductSafetyLabels
 
 ## Properties
 

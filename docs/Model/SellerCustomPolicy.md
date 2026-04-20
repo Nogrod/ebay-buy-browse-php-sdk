@@ -1,4 +1,4 @@
-# # SellerCustomPolicy
+# SellerCustomPolicy
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # HazardousMaterialsLabels
+# HazardousMaterialsLabels
 
 ## Properties
 

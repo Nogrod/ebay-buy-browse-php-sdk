@@ -1,4 +1,4 @@
-# # CompanyAddress
+# CompanyAddress
 
 ## Properties
 

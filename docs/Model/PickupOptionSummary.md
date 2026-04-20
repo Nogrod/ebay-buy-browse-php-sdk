@@ -1,4 +1,4 @@
-# # PickupOptionSummary
+# PickupOptionSummary
 
 ## Properties
 

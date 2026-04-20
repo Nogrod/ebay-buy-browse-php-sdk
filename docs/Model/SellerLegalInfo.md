@@ -1,4 +1,4 @@
-# # SellerLegalInfo
+# SellerLegalInfo
 
 ## Properties
 

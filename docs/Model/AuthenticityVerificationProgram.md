@@ -1,4 +1,4 @@
-# # AuthenticityVerificationProgram
+# AuthenticityVerificationProgram
 
 ## Properties
 

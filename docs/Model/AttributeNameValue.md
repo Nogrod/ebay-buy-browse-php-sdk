@@ -1,4 +1,4 @@
-# # AttributeNameValue
+# AttributeNameValue
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # ConditionDescriptorValue
+# ConditionDescriptorValue
 
 ## Properties
 

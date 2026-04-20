@@ -1,4 +1,4 @@
-# # ConditionDistribution
+# ConditionDistribution
 
 ## Properties
 

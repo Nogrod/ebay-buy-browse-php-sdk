@@ -1,4 +1,4 @@
-# # PaymentMethodBrand
+# PaymentMethodBrand
 
 ## Properties
 

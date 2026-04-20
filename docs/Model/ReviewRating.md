@@ -1,4 +1,4 @@
-# # ReviewRating
+# ReviewRating
 
 ## Properties
 

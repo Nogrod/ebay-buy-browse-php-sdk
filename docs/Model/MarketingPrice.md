@@ -1,4 +1,4 @@
-# # MarketingPrice
+# MarketingPrice
 
 ## Properties
 

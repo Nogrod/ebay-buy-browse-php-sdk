@@ -1,4 +1,4 @@
-# # Refinement
+# Refinement
 
 ## Properties
 

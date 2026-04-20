@@ -1,4 +1,4 @@
-# # EconomicOperator
+# EconomicOperator
 
 ## Properties
 

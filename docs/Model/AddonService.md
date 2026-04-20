@@ -1,4 +1,4 @@
-# # AddonService
+# AddonService
 
 ## Properties
 

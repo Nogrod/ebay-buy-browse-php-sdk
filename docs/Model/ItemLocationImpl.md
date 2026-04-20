@@ -1,4 +1,4 @@
-# # ItemLocationImpl
+# ItemLocationImpl
 
 ## Properties
 

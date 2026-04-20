@@ -1,4 +1,4 @@
-# # AuthenticityGuaranteeProgram
+# AuthenticityGuaranteeProgram
 
 ## Properties
 

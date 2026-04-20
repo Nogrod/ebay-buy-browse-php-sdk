@@ -1,4 +1,4 @@
-# # ItemReturnTerms
+# ItemReturnTerms
 
 ## Properties
 

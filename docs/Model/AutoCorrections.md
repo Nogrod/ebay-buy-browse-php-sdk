@@ -1,4 +1,4 @@
-# # AutoCorrections
+# AutoCorrections
 
 ## Properties
 

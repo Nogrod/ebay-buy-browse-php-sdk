@@ -1,4 +1,4 @@
-# # TaxJurisdiction
+# TaxJurisdiction
 
 ## Properties
 

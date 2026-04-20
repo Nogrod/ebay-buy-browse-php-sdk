@@ -1,4 +1,4 @@
-# # AdditionalProductIdentity
+# AdditionalProductIdentity
 
 ## Properties
 

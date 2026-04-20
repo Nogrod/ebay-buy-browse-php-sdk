@@ -1,4 +1,4 @@
-# # ConvertedAmount
+# ConvertedAmount
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # SearchByImageRequest
+# SearchByImageRequest
 
 ## Properties
 

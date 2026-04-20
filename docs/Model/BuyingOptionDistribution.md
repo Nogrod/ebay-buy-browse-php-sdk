@@ -1,4 +1,4 @@
-# # BuyingOptionDistribution
+# BuyingOptionDistribution
 
 ## Properties
 

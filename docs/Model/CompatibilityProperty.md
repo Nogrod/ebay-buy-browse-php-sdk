@@ -1,4 +1,4 @@
-# # CompatibilityProperty
+# CompatibilityProperty
 
 ## Properties
 

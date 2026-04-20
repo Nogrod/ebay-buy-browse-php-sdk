@@ -1,4 +1,4 @@
-# # LegalAddress
+# LegalAddress
 
 ## Properties
 

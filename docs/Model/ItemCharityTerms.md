@@ -1,4 +1,4 @@
-# # ItemCharityTerms
+# ItemCharityTerms
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # Seller
+# Seller
 
 ## Properties
 
