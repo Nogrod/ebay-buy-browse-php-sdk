@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **city** | **string** | The city of the product manufacturer&#39;s street address. | [optional]
 **company_name** | **string** | The company name of the product manufacturer. | [optional]
 **contact_url** | **string** | The contact URL of the product manufacturer. | [optional]
-**country** | **string** | The two-letter &lt;a href&#x3D;\&quot;https://www.iso.org/iso-3166-country-codes.html \&quot; target&#x3D;\&quot;_blank\&quot;&gt;ISO 3166&lt;/a&gt; standard code for the country of the address. For implementation help, refer to &lt;a href&#x3D;&#39;https://developer.ebay.com/api-docs/buy/browse/types/ba:CountryCodeEnum&#39;&gt;eBay API documentation&lt;/a&gt; | [optional]
+**country** | [**\eBay\Buy\Browse\Model\CountryCodeEnum**](CountryCodeEnum.md) | The two-letter &lt;a href&#x3D;\&quot;https://www.iso.org/iso-3166-country-codes.html \&quot; target&#x3D;\&quot;_blank\&quot;&gt;ISO 3166&lt;/a&gt; standard code for the country of the address. | [optional]
 **country_name** | **string** | The country name of the product manufacturer&#39;s street address. | [optional]
 **county** | **string** | The county of the product manufacturer&#39;s street address. | [optional]
 **email** | **string** | The product manufacturer&#39;s business email address. | [optional]

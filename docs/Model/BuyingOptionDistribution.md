@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**buying_option** | **string** | The container that returns the buying option type. This will be AUCTION, FIXED_PRICE, CLASSIFIED_AD, or a combination of these options. For details, see &lt;a href&#x3D;\&quot;/api-docs/buy/browse/resources/item_summary/methods/search#response.itemSummaries.buyingOptions\&quot;&gt;buyingOptions&lt;/a&gt;. | [optional]
+**buying_option** | **string** | The container that returns the buying option type. This will be AUCTION, FIXED_PRICE, CLASSIFIED_AD, or a combination of these options. For details, see &lt;a href&#x3D;\&quot;/develop/api/buy/browse_api#buy-browse_api-item_summary-search.itemsummary.buyingoptions\&quot;&gt;buyingOptions&lt;/a&gt;. | [optional]
 **match_count** | **int** | The number of items having this buying option. | [optional]
 **refinement_href** | **string** | The HATEOAS reference for this buying option. | [optional]
 

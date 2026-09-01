@@ -12,10 +12,10 @@ Name | Type | Description | Notes
 **name** | **string** | The name of the seller&#39;s business. | [optional]
 **phone** | **string** | The seller&#39;s business phone number. | [optional]
 **registration_number** | **string** | The seller&#39;s registration number. This is information used by some countries. | [optional]
-**seller_provided_legal_address** | [**\eBay\Buy\Browse\Model\LegalAddress**](LegalAddress.md) |  | [optional]
+**seller_provided_legal_address** | [**\eBay\Buy\Browse\Model\LegalAddress**](LegalAddress.md) | The container that returns the seller&#39;s address to be used to contact them. | [optional]
 **terms_of_service** | **string** | This is a free-form string created by the seller. This is the seller&#39;s terms or condition, which is in addition to the seller&#39;s return policies. | [optional]
 **vat_details** | [**\eBay\Buy\Browse\Model\VatDetail[]**](VatDetail.md) | An array of the seller&#39;s VAT (value added tax) IDs and the issuing country. VAT is a tax added by some European countries. | [optional]
-**economic_operator** | [**\eBay\Buy\Browse\Model\EconomicOperator**](EconomicOperator.md) |  | [optional]
-**weee_number** | **string** | The Waste Electrical and Electronic Equipment (WEEE) registration number required for any seller to place electrical and electronic equipment on the market in Germany. This manufacturer number is assigned to the first distributors of electrical and electronic equipment and comprises a country code and an 8-digit sequence of digits (e.g. “WEEE Reg. No. DE 12345678”). | [optional]
+**economic_operator** | [**\eBay\Buy\Browse\Model\EconomicOperator**](EconomicOperator.md) | Provides required information about the manufacturer and/or supplier of the item. | [optional]
+**weee_number** | **string** | The Waste Electrical and Electronic Equipment (WEEE) registration number required for any seller to place electrical and electronic equipment on the market in Germany. This manufacturer number is assigned to the first distributors of electrical and electronic equipment and comprises a country code and an 8-digit sequence of digits (e.g. &#39;WEEE Reg. No. DE 12345678&#39;). | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

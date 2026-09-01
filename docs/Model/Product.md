@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **brand** | **string** | The brand associated with product. To identify the product, this is always used along with MPN (manufacturer part number). | [optional]
 **description** | **string** | The rich description of an eBay product, which might contain HTML. | [optional]
 **gtins** | **string[]** | An array of all the possible GTINs values associated with the product. A GTIN is a unique Global Trade Item number of the item as defined by &lt;a href&#x3D;\&quot;https://www.gtin.info \&quot; target&#x3D;\&quot;_blank\&quot;&gt;https://www.gtin.info&lt;/a&gt;. This can be a UPC (Universal Product Code), EAN (European Article Number), or an ISBN (International Standard Book Number) value. | [optional]
-**image** | [**\eBay\Buy\Browse\Model\Image**](Image.md) |  | [optional]
+**image** | [**\eBay\Buy\Browse\Model\Image**](Image.md) | The primary image of the product. This is often a stock photo. | [optional]
 **mpns** | **string[]** | An array of all possible MPN values associated with the product. A MPNs is manufacturer part number of the product. To identify the product, this is always used along with brand. | [optional]
 **title** | **string** | The title of the product. | [optional]
 
