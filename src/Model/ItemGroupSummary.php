@@ -65,7 +65,7 @@ class ItemGroupSummary implements ModelInterface, ArrayAccess, JsonSerializable
         'item_group_id' => 'string',
         'item_group_image' => '\eBay\Buy\Browse\Model\Image',
         'item_group_title' => 'string',
-        'item_group_type' => '\eBay\Buy\Browse\Model\ItemGroupTypeEnum'
+        'item_group_type' => 'string'
     ];
 
     /**
@@ -438,9 +438,9 @@ class ItemGroupSummary implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Gets item_group_type
      *
-     * @return \eBay\Buy\Browse\Model\ItemGroupTypeEnum|null
+     * @return string|null
      */
-    public function getItemGroupType(): ?\eBay\Buy\Browse\Model\ItemGroupTypeEnum
+    public function getItemGroupType(): ?string
     {
         return $this->container['item_group_type'];
     }
@@ -448,11 +448,11 @@ class ItemGroupSummary implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets item_group_type
      *
-     * @param \eBay\Buy\Browse\Model\ItemGroupTypeEnum|null $item_group_type An enumeration value that indicates the type of the item group. An item group is an item that has various aspect differences, such as color, size, storage capacity, etc.
+     * @param string|null $item_group_type An enumeration value that indicates the type of the item group. An item group is an item that has various aspect differences, such as color, size, storage capacity, etc.
      *
      * @return $this
      */
-    public function setItemGroupType(?\eBay\Buy\Browse\Model\ItemGroupTypeEnum $item_group_type): static
+    public function setItemGroupType(?string $item_group_type): static
     {
         if (is_null($item_group_type)) {
             throw new InvalidArgumentException('non-nullable item_group_type cannot be null');

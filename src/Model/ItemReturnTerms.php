@@ -61,13 +61,13 @@ class ItemReturnTerms implements ModelInterface, ArrayAccess, JsonSerializable
      */
     protected static array $openAPITypes = [
         'extended_holiday_returns_offered' => 'bool',
-        'refund_method' => '\eBay\Buy\Browse\Model\RefundMethodEnum',
+        'refund_method' => 'string',
         'restocking_fee_percentage' => 'string',
         'return_instructions' => 'string',
-        'return_method' => '\eBay\Buy\Browse\Model\ReturnMethodEnum',
+        'return_method' => 'string',
         'return_period' => '\eBay\Buy\Browse\Model\TimeDuration',
         'returns_accepted' => 'bool',
-        'return_shipping_cost_payer' => '\eBay\Buy\Browse\Model\ReturnShippingCostPayerEnum'
+        'return_shipping_cost_payer' => 'string'
     ];
 
     /**
@@ -344,9 +344,9 @@ class ItemReturnTerms implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Gets refund_method
      *
-     * @return \eBay\Buy\Browse\Model\RefundMethodEnum|null
+     * @return string|null
      */
-    public function getRefundMethod(): ?\eBay\Buy\Browse\Model\RefundMethodEnum
+    public function getRefundMethod(): ?string
     {
         return $this->container['refund_method'];
     }
@@ -354,11 +354,11 @@ class ItemReturnTerms implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets refund_method
      *
-     * @param \eBay\Buy\Browse\Model\RefundMethodEnum|null $refund_method An enumeration value that indicates how a buyer is refunded when an item is returned. <br><br><b> Valid Values: </b> MONEY_BACK or MERCHANDISE_CREDIT  <br><br>Code so that your app gracefully handles any future changes to this list.
+     * @param string|null $refund_method An enumeration value that indicates how a buyer is refunded when an item is returned. <br><br><b> Valid Values: </b> MONEY_BACK or MERCHANDISE_CREDIT  <br><br>Code so that your app gracefully handles any future changes to this list.
      *
      * @return $this
      */
-    public function setRefundMethod(?\eBay\Buy\Browse\Model\RefundMethodEnum $refund_method): static
+    public function setRefundMethod(?string $refund_method): static
     {
         if (is_null($refund_method)) {
             throw new InvalidArgumentException('non-nullable refund_method cannot be null');
@@ -425,9 +425,9 @@ class ItemReturnTerms implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Gets return_method
      *
-     * @return \eBay\Buy\Browse\Model\ReturnMethodEnum|null
+     * @return string|null
      */
-    public function getReturnMethod(): ?\eBay\Buy\Browse\Model\ReturnMethodEnum
+    public function getReturnMethod(): ?string
     {
         return $this->container['return_method'];
     }
@@ -435,11 +435,11 @@ class ItemReturnTerms implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets return_method
      *
-     * @param \eBay\Buy\Browse\Model\ReturnMethodEnum|null $return_method An enumeration value that indicates the alternative methods for a full refund when an item is returned. This field is returned if the seller offers the buyer an item replacement or exchange instead of a monetary refund. <br><br><b> Valid Values: </b>  <ul><li><b> REPLACEMENT</b> - Indicates that the buyer has the option of receiving money back for the returned item, or they can choose to have the seller replace the item with an identical item.</li>  <li><b> EXCHANGE</b> - Indicates that the buyer has the option of receiving money back for the returned item, or they can exchange the item for another similar item.</li></ul>  Code so that your app gracefully handles any future changes to this list.
+     * @param string|null $return_method An enumeration value that indicates the alternative methods for a full refund when an item is returned. This field is returned if the seller offers the buyer an item replacement or exchange instead of a monetary refund. <br><br><b> Valid Values: </b>  <ul><li><b> REPLACEMENT</b> - Indicates that the buyer has the option of receiving money back for the returned item, or they can choose to have the seller replace the item with an identical item.</li>  <li><b> EXCHANGE</b> - Indicates that the buyer has the option of receiving money back for the returned item, or they can exchange the item for another similar item.</li></ul>  Code so that your app gracefully handles any future changes to this list.
      *
      * @return $this
      */
-    public function setReturnMethod(?\eBay\Buy\Browse\Model\ReturnMethodEnum $return_method): static
+    public function setReturnMethod(?string $return_method): static
     {
         if (is_null($return_method)) {
             throw new InvalidArgumentException('non-nullable return_method cannot be null');
@@ -506,9 +506,9 @@ class ItemReturnTerms implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Gets return_shipping_cost_payer
      *
-     * @return \eBay\Buy\Browse\Model\ReturnShippingCostPayerEnum|null
+     * @return string|null
      */
-    public function getReturnShippingCostPayer(): ?\eBay\Buy\Browse\Model\ReturnShippingCostPayerEnum
+    public function getReturnShippingCostPayer(): ?string
     {
         return $this->container['return_shipping_cost_payer'];
     }
@@ -516,11 +516,11 @@ class ItemReturnTerms implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets return_shipping_cost_payer
      *
-     * @param \eBay\Buy\Browse\Model\ReturnShippingCostPayerEnum|null $return_shipping_cost_payer This enumeration value indicates whether the buyer or seller is responsible for return shipping costs when an item is returned. <br><br><b> Valid Values: </b> <ul><li><b> SELLER</b> - Indicates the seller will pay for the shipping costs to return the item.</li>  <li><b> BUYER</b> - Indicates the buyer will pay for the shipping costs to return the item.</li>  </ul>  Code so that your app gracefully handles any future changes to this list.
+     * @param string|null $return_shipping_cost_payer This enumeration value indicates whether the buyer or seller is responsible for return shipping costs when an item is returned. <br><br><b> Valid Values: </b> <ul><li><b> SELLER</b> - Indicates the seller will pay for the shipping costs to return the item.</li>  <li><b> BUYER</b> - Indicates the buyer will pay for the shipping costs to return the item.</li>  </ul>  Code so that your app gracefully handles any future changes to this list.
      *
      * @return $this
      */
-    public function setReturnShippingCostPayer(?\eBay\Buy\Browse\Model\ReturnShippingCostPayerEnum $return_shipping_cost_payer): static
+    public function setReturnShippingCostPayer(?string $return_shipping_cost_payer): static
     {
         if (is_null($return_shipping_cost_payer)) {
             throw new InvalidArgumentException('non-nullable return_shipping_cost_payer cannot be null');

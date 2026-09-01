@@ -60,10 +60,10 @@ class PaymentMethod implements ModelInterface, ArrayAccess, JsonSerializable
      * @var array<string, string>
      */
     protected static array $openAPITypes = [
-        'payment_method_type' => '\eBay\Buy\Browse\Model\PaymentMethodTypeEnum',
+        'payment_method_type' => 'string',
         'payment_method_brands' => '\eBay\Buy\Browse\Model\PaymentMethodBrand[]',
-        'payment_instructions' => '\eBay\Buy\Browse\Model\PaymentInstructionEnum[]',
-        'seller_instructions' => '\eBay\Buy\Browse\Model\SellerInstructionEnum[]'
+        'payment_instructions' => 'string[]',
+        'seller_instructions' => 'string[]'
     ];
 
     /**
@@ -289,9 +289,9 @@ class PaymentMethod implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Gets payment_method_type
      *
-     * @return \eBay\Buy\Browse\Model\PaymentMethodTypeEnum|null
+     * @return string|null
      */
-    public function getPaymentMethodType(): ?\eBay\Buy\Browse\Model\PaymentMethodTypeEnum
+    public function getPaymentMethodType(): ?string
     {
         return $this->container['payment_method_type'];
     }
@@ -299,11 +299,11 @@ class PaymentMethod implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets payment_method_type
      *
-     * @param \eBay\Buy\Browse\Model\PaymentMethodTypeEnum|null $payment_method_type The payment method type, such as credit card or cash.
+     * @param string|null $payment_method_type The payment method type, such as credit card or cash.
      *
      * @return $this
      */
-    public function setPaymentMethodType(?\eBay\Buy\Browse\Model\PaymentMethodTypeEnum $payment_method_type): static
+    public function setPaymentMethodType(?string $payment_method_type): static
     {
         if (is_null($payment_method_type)) {
             throw new InvalidArgumentException('non-nullable payment_method_type cannot be null');
@@ -343,7 +343,7 @@ class PaymentMethod implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Gets payment_instructions
      *
-     * @return \eBay\Buy\Browse\Model\PaymentInstructionEnum[]|null
+     * @return string[]|null
      */
     public function getPaymentInstructions(): ?array
     {
@@ -353,7 +353,7 @@ class PaymentMethod implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets payment_instructions
      *
-     * @param \eBay\Buy\Browse\Model\PaymentInstructionEnum[]|null $payment_instructions The payment instructions for the buyer, such as <i>cash in person</i> or <i>contact seller</i>.
+     * @param string[]|null $payment_instructions The payment instructions for the buyer, such as <i>cash in person</i> or <i>contact seller</i>.
      *
      * @return $this
      */
@@ -370,7 +370,7 @@ class PaymentMethod implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Gets seller_instructions
      *
-     * @return \eBay\Buy\Browse\Model\SellerInstructionEnum[]|null
+     * @return string[]|null
      */
     public function getSellerInstructions(): ?array
     {
@@ -380,7 +380,7 @@ class PaymentMethod implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets seller_instructions
      *
-     * @param \eBay\Buy\Browse\Model\SellerInstructionEnum[]|null $seller_instructions The seller instructions to the buyer, such as <i>accepts credit cards</i> or <i>see description</i>.
+     * @param string[]|null $seller_instructions The seller instructions to the buyer, such as <i>accepts credit cards</i> or <i>see description</i>.
      *
      * @return $this
      */

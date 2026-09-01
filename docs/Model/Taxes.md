@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **shipping_and_handling_taxed** | **bool** | This indicates if tax is applied for the shipping cost. | [optional]
 **tax_jurisdiction** | [**\eBay\Buy\Browse\Model\TaxJurisdiction**](TaxJurisdiction.md) | The container that returns the tax jurisdiction. | [optional]
 **tax_percentage** | **string** | The percentage of tax. | [optional]
-**tax_type** | [**\eBay\Buy\Browse\Model\TaxTypeEnum**](TaxTypeEnum.md) | This field indicates the type of tax that may be collected for the item. | [optional]
+**tax_type** | **string** | This field indicates the type of tax that may be collected for the item. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

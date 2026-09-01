@@ -61,9 +61,9 @@ class EstimatedAvailability implements ModelInterface, ArrayAccess, JsonSerializ
      */
     protected static array $openAPITypes = [
         'availability_threshold' => 'int',
-        'availability_threshold_type' => '\eBay\Buy\Browse\Model\AvailabilityThresholdEnum',
-        'delivery_options' => '\eBay\Buy\Browse\Model\DeliveryOptionsEnum[]',
-        'estimated_availability_status' => '\eBay\Buy\Browse\Model\AvailabilityStatusEnum',
+        'availability_threshold_type' => 'string',
+        'delivery_options' => 'string[]',
+        'estimated_availability_status' => 'string',
         'estimated_available_quantity' => 'int',
         'estimated_remaining_quantity' => 'int',
         'estimated_sold_quantity' => 'int'
@@ -337,9 +337,9 @@ class EstimatedAvailability implements ModelInterface, ArrayAccess, JsonSerializ
     /**
      * Gets availability_threshold_type
      *
-     * @return \eBay\Buy\Browse\Model\AvailabilityThresholdEnum|null
+     * @return string|null
      */
-    public function getAvailabilityThresholdType(): ?\eBay\Buy\Browse\Model\AvailabilityThresholdEnum
+    public function getAvailabilityThresholdType(): ?string
     {
         return $this->container['availability_threshold_type'];
     }
@@ -347,11 +347,11 @@ class EstimatedAvailability implements ModelInterface, ArrayAccess, JsonSerializ
     /**
      * Sets availability_threshold_type
      *
-     * @param \eBay\Buy\Browse\Model\AvailabilityThresholdEnum|null $availability_threshold_type <a name=\"display-item-quantity\"></a> This field is return only when the seller sets their <b> Display Item Quantity</b> preference to <b> Display \"More than 10 available\" in your listing (if applicable)</b>. The value of this field will be <code> MORE_THAN</code>. This indicates that the seller has more than the 'quantity display preference', which is 10, in stock for this item.    <br><br> The following are the display item quantity preferences the seller can set. <br><ul><li> <b> Display \"More than 10 available\" in your listing (if applicable) </b><ul> <li>If the seller enables this preference, this field is returned as long as there are more than 10 of this item in inventory.</li>  <li> If the quantity is equal to 10 or drops below 10, this field is not returned and the estimated quantity of the item is returned in the <b> estimatedAvailableQuantity</b> field.</li></ul> </li> <li> <b> Display the exact quantity in your items</b> <br>If the seller enables this preference, the <b> availabilityThresholdType</b> and <b> availabilityThreshold</b> fields are not returned and the estimated quantity of the item is returned in the <b> estimatedAvailableQuantity</b> field.<br><br><b> Note: </b> Because the quantity of an item can change several times within a second, it is impossible to return the exact quantity. </li></ul>   <br>Code so that your app gracefully handles any future changes to these preferences.
+     * @param string|null $availability_threshold_type <a name=\"display-item-quantity\"></a> This field is return only when the seller sets their <b> Display Item Quantity</b> preference to <b> Display \"More than 10 available\" in your listing (if applicable)</b>. The value of this field will be <code> MORE_THAN</code>. This indicates that the seller has more than the 'quantity display preference', which is 10, in stock for this item.    <br><br> The following are the display item quantity preferences the seller can set. <br><ul><li> <b> Display \"More than 10 available\" in your listing (if applicable) </b><ul> <li>If the seller enables this preference, this field is returned as long as there are more than 10 of this item in inventory.</li>  <li> If the quantity is equal to 10 or drops below 10, this field is not returned and the estimated quantity of the item is returned in the <b> estimatedAvailableQuantity</b> field.</li></ul> </li> <li> <b> Display the exact quantity in your items</b> <br>If the seller enables this preference, the <b> availabilityThresholdType</b> and <b> availabilityThreshold</b> fields are not returned and the estimated quantity of the item is returned in the <b> estimatedAvailableQuantity</b> field.<br><br><b> Note: </b> Because the quantity of an item can change several times within a second, it is impossible to return the exact quantity. </li></ul>   <br>Code so that your app gracefully handles any future changes to these preferences.
      *
      * @return $this
      */
-    public function setAvailabilityThresholdType(?\eBay\Buy\Browse\Model\AvailabilityThresholdEnum $availability_threshold_type): static
+    public function setAvailabilityThresholdType(?string $availability_threshold_type): static
     {
         if (is_null($availability_threshold_type)) {
             throw new InvalidArgumentException('non-nullable availability_threshold_type cannot be null');
@@ -364,7 +364,7 @@ class EstimatedAvailability implements ModelInterface, ArrayAccess, JsonSerializ
     /**
      * Gets delivery_options
      *
-     * @return \eBay\Buy\Browse\Model\DeliveryOptionsEnum[]|null
+     * @return string[]|null
      */
     public function getDeliveryOptions(): ?array
     {
@@ -374,7 +374,7 @@ class EstimatedAvailability implements ModelInterface, ArrayAccess, JsonSerializ
     /**
      * Sets delivery_options
      *
-     * @param \eBay\Buy\Browse\Model\DeliveryOptionsEnum[]|null $delivery_options An array of available delivery options. <br><br><b> Valid Values: </b> SHIP_TO_HOME, SELLER_ARRANGED_LOCAL_PICKUP, IN_STORE_PICKUP, PICKUP_DROP_OFF, or DIGITAL_DELIVERY <br><br>Code so that your app gracefully handles any future changes to this list.
+     * @param string[]|null $delivery_options An array of available delivery options. <br><br><b> Valid Values: </b> SHIP_TO_HOME, SELLER_ARRANGED_LOCAL_PICKUP, IN_STORE_PICKUP, PICKUP_DROP_OFF, or DIGITAL_DELIVERY <br><br>Code so that your app gracefully handles any future changes to this list.
      *
      * @return $this
      */
@@ -391,9 +391,9 @@ class EstimatedAvailability implements ModelInterface, ArrayAccess, JsonSerializ
     /**
      * Gets estimated_availability_status
      *
-     * @return \eBay\Buy\Browse\Model\AvailabilityStatusEnum|null
+     * @return string|null
      */
-    public function getEstimatedAvailabilityStatus(): ?\eBay\Buy\Browse\Model\AvailabilityStatusEnum
+    public function getEstimatedAvailabilityStatus(): ?string
     {
         return $this->container['estimated_availability_status'];
     }
@@ -401,11 +401,11 @@ class EstimatedAvailability implements ModelInterface, ArrayAccess, JsonSerializ
     /**
      * Sets estimated_availability_status
      *
-     * @param \eBay\Buy\Browse\Model\AvailabilityStatusEnum|null $estimated_availability_status An enumeration value representing the inventory status of this item.<br><br><span class=\"tablenote\"><b> Note: </b>Be sure to review the <b>itemEndDate</b> field to determine whether the item is available for purchase.</span><br><br><b> Valid Values: </b> IN_STOCK, LIMITED_STOCK, or OUT_OF_STOCK <br><br>Code so that your app gracefully handles any future changes to this list.
+     * @param string|null $estimated_availability_status An enumeration value representing the inventory status of this item.<br><br><span class=\"tablenote\"><b> Note: </b>Be sure to review the <b>itemEndDate</b> field to determine whether the item is available for purchase.</span><br><br><b> Valid Values: </b> IN_STOCK, LIMITED_STOCK, or OUT_OF_STOCK <br><br>Code so that your app gracefully handles any future changes to this list.
      *
      * @return $this
      */
-    public function setEstimatedAvailabilityStatus(?\eBay\Buy\Browse\Model\AvailabilityStatusEnum $estimated_availability_status): static
+    public function setEstimatedAvailabilityStatus(?string $estimated_availability_status): static
     {
         if (is_null($estimated_availability_status)) {
             throw new InvalidArgumentException('non-nullable estimated_availability_status cannot be null');

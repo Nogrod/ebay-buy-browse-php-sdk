@@ -100,7 +100,7 @@ class Item implements ModelInterface, ArrayAccess, JsonSerializable
         'item_location' => '\eBay\Buy\Browse\Model\Address',
         'item_web_url' => 'string',
         'legacy_item_id' => 'string',
-        'listing_marketplace_id' => '\eBay\Buy\Browse\Model\MarketplaceIdEnum',
+        'listing_marketplace_id' => 'string',
         'localized_aspects' => '\eBay\Buy\Browse\Model\TypedNameValue[]',
         'lot_size' => 'int',
         'manufacturer' => '\eBay\Buy\Browse\Model\CompanyAddress',
@@ -111,7 +111,7 @@ class Item implements ModelInterface, ArrayAccess, JsonSerializable
         'pattern' => 'string',
         'payment_methods' => '\eBay\Buy\Browse\Model\PaymentMethod[]',
         'price' => '\eBay\Buy\Browse\Model\ConvertedAmount',
-        'price_display_condition' => '\eBay\Buy\Browse\Model\PriceDisplayConditionEnum',
+        'price_display_condition' => 'string',
         'primary_item_group' => '\eBay\Buy\Browse\Model\ItemGroupSummary',
         'primary_product_review_rating' => '\eBay\Buy\Browse\Model\ReviewRating',
         'priority_listing' => 'bool',
@@ -1922,9 +1922,9 @@ class Item implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Gets listing_marketplace_id
      *
-     * @return \eBay\Buy\Browse\Model\MarketplaceIdEnum|null
+     * @return string|null
      */
-    public function getListingMarketplaceId(): ?\eBay\Buy\Browse\Model\MarketplaceIdEnum
+    public function getListingMarketplaceId(): ?string
     {
         return $this->container['listing_marketplace_id'];
     }
@@ -1932,11 +1932,11 @@ class Item implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets listing_marketplace_id
      *
-     * @param \eBay\Buy\Browse\Model\MarketplaceIdEnum|null $listing_marketplace_id The ID of the eBay marketplace where the item is listed.
+     * @param string|null $listing_marketplace_id The ID of the eBay marketplace where the item is listed.
      *
      * @return $this
      */
-    public function setListingMarketplaceId(?\eBay\Buy\Browse\Model\MarketplaceIdEnum $listing_marketplace_id): static
+    public function setListingMarketplaceId(?string $listing_marketplace_id): static
     {
         if (is_null($listing_marketplace_id)) {
             throw new InvalidArgumentException('non-nullable listing_marketplace_id cannot be null');
@@ -2219,9 +2219,9 @@ class Item implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Gets price_display_condition
      *
-     * @return \eBay\Buy\Browse\Model\PriceDisplayConditionEnum|null
+     * @return string|null
      */
-    public function getPriceDisplayCondition(): ?\eBay\Buy\Browse\Model\PriceDisplayConditionEnum
+    public function getPriceDisplayCondition(): ?string
     {
         return $this->container['price_display_condition'];
     }
@@ -2229,11 +2229,11 @@ class Item implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets price_display_condition
      *
-     * @param \eBay\Buy\Browse\Model\PriceDisplayConditionEnum|null $price_display_condition Indicates when in the buying flow the item's price can appear for minimum advertised price (MAP) items, which is the lowest price a retailer can advertise/show for this item.
+     * @param string|null $price_display_condition Indicates when in the buying flow the item's price can appear for minimum advertised price (MAP) items, which is the lowest price a retailer can advertise/show for this item.
      *
      * @return $this
      */
-    public function setPriceDisplayCondition(?\eBay\Buy\Browse\Model\PriceDisplayConditionEnum $price_display_condition): static
+    public function setPriceDisplayCondition(?string $price_display_condition): static
     {
         if (is_null($price_display_condition)) {
             throw new InvalidArgumentException('non-nullable price_display_condition cannot be null');

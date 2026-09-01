@@ -104,7 +104,7 @@ class CoreItem implements ModelInterface, ArrayAccess, JsonSerializable
         'pattern' => 'string',
         'payment_methods' => '\eBay\Buy\Browse\Model\PaymentMethod[]',
         'price' => '\eBay\Buy\Browse\Model\ConvertedAmount',
-        'price_display_condition' => '\eBay\Buy\Browse\Model\PriceDisplayConditionEnum',
+        'price_display_condition' => 'string',
         'primary_item_group' => '\eBay\Buy\Browse\Model\ItemGroupSummary',
         'primary_product_review_rating' => '\eBay\Buy\Browse\Model\ReviewRating',
         'priority_listing' => 'bool',
@@ -1939,9 +1939,9 @@ class CoreItem implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Gets price_display_condition
      *
-     * @return \eBay\Buy\Browse\Model\PriceDisplayConditionEnum|null
+     * @return string|null
      */
-    public function getPriceDisplayCondition(): ?\eBay\Buy\Browse\Model\PriceDisplayConditionEnum
+    public function getPriceDisplayCondition(): ?string
     {
         return $this->container['price_display_condition'];
     }
@@ -1949,11 +1949,11 @@ class CoreItem implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets price_display_condition
      *
-     * @param \eBay\Buy\Browse\Model\PriceDisplayConditionEnum|null $price_display_condition Indicates when in the buying flow the item's price can appear for minimum advertised price (MAP) items, which is the lowest price a retailer can advertise/show for this item.
+     * @param string|null $price_display_condition Indicates when in the buying flow the item's price can appear for minimum advertised price (MAP) items, which is the lowest price a retailer can advertise/show for this item.
      *
      * @return $this
      */
-    public function setPriceDisplayCondition(?\eBay\Buy\Browse\Model\PriceDisplayConditionEnum $price_display_condition): static
+    public function setPriceDisplayCondition(?string $price_display_condition): static
     {
         if (is_null($price_display_condition)) {
             throw new InvalidArgumentException('non-nullable price_display_condition cannot be null');

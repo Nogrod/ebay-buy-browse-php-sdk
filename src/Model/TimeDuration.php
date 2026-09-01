@@ -60,7 +60,7 @@ class TimeDuration implements ModelInterface, ArrayAccess, JsonSerializable
      * @var array<string, string>
      */
     protected static array $openAPITypes = [
-        'unit' => '\eBay\Buy\Browse\Model\TimeDurationUnitEnum',
+        'unit' => 'string',
         'value' => 'int'
     ];
 
@@ -275,9 +275,9 @@ class TimeDuration implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Gets unit
      *
-     * @return \eBay\Buy\Browse\Model\TimeDurationUnitEnum|null
+     * @return string|null
      */
-    public function getUnit(): ?\eBay\Buy\Browse\Model\TimeDurationUnitEnum
+    public function getUnit(): ?string
     {
         return $this->container['unit'];
     }
@@ -285,11 +285,11 @@ class TimeDuration implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets unit
      *
-     * @param \eBay\Buy\Browse\Model\TimeDurationUnitEnum|null $unit An enumeration value that indicates the units of the time span (e.g., <code>HOURS</code>). The enumeration value in this field defines the period of time being used to measure the duration.<br><br>Refer to <a href=\"/api-docs/buy/browse/types/ba:TimeDurationUnitEnum\">TimeDurationUnitEnum</a> for the list of supported values.
+     * @param string|null $unit An enumeration value that indicates the units of the time span (e.g., <code>HOURS</code>). The enumeration value in this field defines the period of time being used to measure the duration.<br><br>Refer to <a href=\"/api-docs/buy/browse/types/ba:TimeDurationUnitEnum\">TimeDurationUnitEnum</a> for the list of supported values.
      *
      * @return $this
      */
-    public function setUnit(?\eBay\Buy\Browse\Model\TimeDurationUnitEnum $unit): static
+    public function setUnit(?string $unit): static
     {
         if (is_null($unit)) {
             throw new InvalidArgumentException('non-nullable unit cannot be null');

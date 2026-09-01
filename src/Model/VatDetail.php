@@ -60,7 +60,7 @@ class VatDetail implements ModelInterface, ArrayAccess, JsonSerializable
      * @var array<string, string>
      */
     protected static array $openAPITypes = [
-        'issuing_country' => '\eBay\Buy\Browse\Model\CountryCodeEnum',
+        'issuing_country' => 'string',
         'vat_id' => 'string'
     ];
 
@@ -275,9 +275,9 @@ class VatDetail implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Gets issuing_country
      *
-     * @return \eBay\Buy\Browse\Model\CountryCodeEnum|null
+     * @return string|null
      */
-    public function getIssuingCountry(): ?\eBay\Buy\Browse\Model\CountryCodeEnum
+    public function getIssuingCountry(): ?string
     {
         return $this->container['issuing_country'];
     }
@@ -285,11 +285,11 @@ class VatDetail implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets issuing_country
      *
-     * @param \eBay\Buy\Browse\Model\CountryCodeEnum|null $issuing_country The two-letter <a href=\"https://www.iso.org/iso-3166-country-codes.html \" target=\"_blank\">ISO 3166</a> standard of the country issuing the seller's VAT (value added tax) ID. VAT is a tax added by some European countries.
+     * @param string|null $issuing_country The two-letter <a href=\"https://www.iso.org/iso-3166-country-codes.html \" target=\"_blank\">ISO 3166</a> standard of the country issuing the seller's VAT (value added tax) ID. VAT is a tax added by some European countries.
      *
      * @return $this
      */
-    public function setIssuingCountry(?\eBay\Buy\Browse\Model\CountryCodeEnum $issuing_country): static
+    public function setIssuingCountry(?string $issuing_country): static
     {
         if (is_null($issuing_country)) {
             throw new InvalidArgumentException('non-nullable issuing_country cannot be null');

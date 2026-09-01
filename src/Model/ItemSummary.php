@@ -66,7 +66,7 @@ class ItemSummary implements ModelInterface, ArrayAccess, JsonSerializable
         'bid_count' => 'int',
         'buying_options' => 'string[]',
         'categories' => '\eBay\Buy\Browse\Model\Category[]',
-        'compatibility_match' => '\eBay\Buy\Browse\Model\CompatibilityMatchEnum',
+        'compatibility_match' => 'string',
         'compatibility_properties' => '\eBay\Buy\Browse\Model\CompatibilityProperty[]',
         'condition' => 'string',
         'condition_id' => 'string',
@@ -87,11 +87,11 @@ class ItemSummary implements ModelInterface, ArrayAccess, JsonSerializable
         'item_web_url' => 'string',
         'leaf_category_ids' => 'string[]',
         'legacy_item_id' => 'string',
-        'listing_marketplace_id' => '\eBay\Buy\Browse\Model\MarketplaceIdEnum',
+        'listing_marketplace_id' => 'string',
         'marketing_price' => '\eBay\Buy\Browse\Model\MarketingPrice',
         'pickup_options' => '\eBay\Buy\Browse\Model\PickupOptionSummary[]',
         'price' => '\eBay\Buy\Browse\Model\ConvertedAmount',
-        'price_display_condition' => '\eBay\Buy\Browse\Model\PriceDisplayConditionEnum',
+        'price_display_condition' => 'string',
         'priority_listing' => 'bool',
         'qualified_programs' => 'string[]',
         'seller' => '\eBay\Buy\Browse\Model\Seller',
@@ -731,9 +731,9 @@ class ItemSummary implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Gets compatibility_match
      *
-     * @return \eBay\Buy\Browse\Model\CompatibilityMatchEnum|null
+     * @return string|null
      */
-    public function getCompatibilityMatch(): ?\eBay\Buy\Browse\Model\CompatibilityMatchEnum
+    public function getCompatibilityMatch(): ?string
     {
         return $this->container['compatibility_match'];
     }
@@ -741,11 +741,11 @@ class ItemSummary implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets compatibility_match
      *
-     * @param \eBay\Buy\Browse\Model\CompatibilityMatchEnum|null $compatibility_match This indicates how well an item matches the <code>compatibility_filter</code> product attributes.<br><br><b>Valid Values:</b><ul><li><code>EXACT</code></li><li><code>POSSIBLE</code></li></ul>
+     * @param string|null $compatibility_match This indicates how well an item matches the <code>compatibility_filter</code> product attributes.<br><br><b>Valid Values:</b><ul><li><code>EXACT</code></li><li><code>POSSIBLE</code></li></ul>
      *
      * @return $this
      */
-    public function setCompatibilityMatch(?\eBay\Buy\Browse\Model\CompatibilityMatchEnum $compatibility_match): static
+    public function setCompatibilityMatch(?string $compatibility_match): static
     {
         if (is_null($compatibility_match)) {
             throw new InvalidArgumentException('non-nullable compatibility_match cannot be null');
@@ -1298,9 +1298,9 @@ class ItemSummary implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Gets listing_marketplace_id
      *
-     * @return \eBay\Buy\Browse\Model\MarketplaceIdEnum|null
+     * @return string|null
      */
-    public function getListingMarketplaceId(): ?\eBay\Buy\Browse\Model\MarketplaceIdEnum
+    public function getListingMarketplaceId(): ?string
     {
         return $this->container['listing_marketplace_id'];
     }
@@ -1308,11 +1308,11 @@ class ItemSummary implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets listing_marketplace_id
      *
-     * @param \eBay\Buy\Browse\Model\MarketplaceIdEnum|null $listing_marketplace_id The ID of the eBay marketplace on which the seller listed the item.
+     * @param string|null $listing_marketplace_id The ID of the eBay marketplace on which the seller listed the item.
      *
      * @return $this
      */
-    public function setListingMarketplaceId(?\eBay\Buy\Browse\Model\MarketplaceIdEnum $listing_marketplace_id): static
+    public function setListingMarketplaceId(?string $listing_marketplace_id): static
     {
         if (is_null($listing_marketplace_id)) {
             throw new InvalidArgumentException('non-nullable listing_marketplace_id cannot be null');
@@ -1406,9 +1406,9 @@ class ItemSummary implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Gets price_display_condition
      *
-     * @return \eBay\Buy\Browse\Model\PriceDisplayConditionEnum|null
+     * @return string|null
      */
-    public function getPriceDisplayCondition(): ?\eBay\Buy\Browse\Model\PriceDisplayConditionEnum
+    public function getPriceDisplayCondition(): ?string
     {
         return $this->container['price_display_condition'];
     }
@@ -1416,11 +1416,11 @@ class ItemSummary implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets price_display_condition
      *
-     * @param \eBay\Buy\Browse\Model\PriceDisplayConditionEnum|null $price_display_condition Indicates when in the buying flow the item's price can appear for minimum advertised price (MAP) items, which is the lowest price a retailer can advertise/show for this item.
+     * @param string|null $price_display_condition Indicates when in the buying flow the item's price can appear for minimum advertised price (MAP) items, which is the lowest price a retailer can advertise/show for this item.
      *
      * @return $this
      */
-    public function setPriceDisplayCondition(?\eBay\Buy\Browse\Model\PriceDisplayConditionEnum $price_display_condition): static
+    public function setPriceDisplayCondition(?string $price_display_condition): static
     {
         if (is_null($price_display_condition)) {
             throw new InvalidArgumentException('non-nullable price_display_condition cannot be null');

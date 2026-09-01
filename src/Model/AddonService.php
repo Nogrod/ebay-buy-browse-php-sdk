@@ -60,10 +60,10 @@ class AddonService implements ModelInterface, ArrayAccess, JsonSerializable
      * @var array<string, string>
      */
     protected static array $openAPITypes = [
-        'selection' => '\eBay\Buy\Browse\Model\AddonServiceSelectionEnum',
+        'selection' => 'string',
         'service_fee' => '\eBay\Buy\Browse\Model\ConvertedAmount',
         'service_id' => 'string',
-        'service_type' => '\eBay\Buy\Browse\Model\AddonServiceTypeEnum'
+        'service_type' => 'string'
     ];
 
     /**
@@ -289,9 +289,9 @@ class AddonService implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Gets selection
      *
-     * @return \eBay\Buy\Browse\Model\AddonServiceSelectionEnum|null
+     * @return string|null
      */
-    public function getSelection(): ?\eBay\Buy\Browse\Model\AddonServiceSelectionEnum
+    public function getSelection(): ?string
     {
         return $this->container['selection'];
     }
@@ -299,11 +299,11 @@ class AddonService implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets selection
      *
-     * @param \eBay\Buy\Browse\Model\AddonServiceSelectionEnum|null $selection This field indicates whether the add-on service must be selected for the item.
+     * @param string|null $selection This field indicates whether the add-on service must be selected for the item.
      *
      * @return $this
      */
-    public function setSelection(?\eBay\Buy\Browse\Model\AddonServiceSelectionEnum $selection): static
+    public function setSelection(?string $selection): static
     {
         if (is_null($selection)) {
             throw new InvalidArgumentException('non-nullable selection cannot be null');
@@ -370,9 +370,9 @@ class AddonService implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Gets service_type
      *
-     * @return \eBay\Buy\Browse\Model\AddonServiceTypeEnum|null
+     * @return string|null
      */
-    public function getServiceType(): ?\eBay\Buy\Browse\Model\AddonServiceTypeEnum
+    public function getServiceType(): ?string
     {
         return $this->container['service_type'];
     }
@@ -380,11 +380,11 @@ class AddonService implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets service_type
      *
-     * @param \eBay\Buy\Browse\Model\AddonServiceTypeEnum|null $service_type The type of add-on service, such as <code>AUTHENTICITY_GUARANTEE</code>.
+     * @param string|null $service_type The type of add-on service, such as <code>AUTHENTICITY_GUARANTEE</code>.
      *
      * @return $this
      */
-    public function setServiceType(?\eBay\Buy\Browse\Model\AddonServiceTypeEnum $service_type): static
+    public function setServiceType(?string $service_type): static
     {
         if (is_null($service_type)) {
             throw new InvalidArgumentException('non-nullable service_type cannot be null');

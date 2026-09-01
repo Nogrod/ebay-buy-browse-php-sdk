@@ -61,7 +61,7 @@ class TypedNameValue implements ModelInterface, ArrayAccess, JsonSerializable
      */
     protected static array $openAPITypes = [
         'name' => 'string',
-        'type' => '\eBay\Buy\Browse\Model\ValueTypeEnum',
+        'type' => 'string',
         'value' => 'string'
     ];
 
@@ -309,9 +309,9 @@ class TypedNameValue implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Gets type
      *
-     * @return \eBay\Buy\Browse\Model\ValueTypeEnum|null
+     * @return string|null
      */
-    public function getType(): ?\eBay\Buy\Browse\Model\ValueTypeEnum
+    public function getType(): ?string
     {
         return $this->container['type'];
     }
@@ -319,11 +319,11 @@ class TypedNameValue implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets type
      *
-     * @param \eBay\Buy\Browse\Model\ValueTypeEnum|null $type This indicates if the value being returned is a string or an array of values. <br><br><b> Valid Values: </b> <ul><li><b> STRING</b> - Indicates the value returned is a string.</li>  <li><b> STRING_ARRAY</b> - Indicates the value returned is an array of strings.</li></ul>  Code so that your app gracefully handles any future changes to this list.
+     * @param string|null $type This indicates if the value being returned is a string or an array of values. <br><br><b> Valid Values: </b> <ul><li><b> STRING</b> - Indicates the value returned is a string.</li>  <li><b> STRING_ARRAY</b> - Indicates the value returned is an array of strings.</li></ul>  Code so that your app gracefully handles any future changes to this list.
      *
      * @return $this
      */
-    public function setType(?\eBay\Buy\Browse\Model\ValueTypeEnum $type): static
+    public function setType(?string $type): static
     {
         if (is_null($type)) {
             throw new InvalidArgumentException('non-nullable type cannot be null');

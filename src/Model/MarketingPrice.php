@@ -63,7 +63,7 @@ class MarketingPrice implements ModelInterface, ArrayAccess, JsonSerializable
         'discount_amount' => '\eBay\Buy\Browse\Model\ConvertedAmount',
         'discount_percentage' => 'string',
         'original_price' => '\eBay\Buy\Browse\Model\ConvertedAmount',
-        'price_treatment' => '\eBay\Buy\Browse\Model\PriceTreatmentEnum'
+        'price_treatment' => 'string'
     ];
 
     /**
@@ -370,9 +370,9 @@ class MarketingPrice implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Gets price_treatment
      *
-     * @return \eBay\Buy\Browse\Model\PriceTreatmentEnum|null
+     * @return string|null
      */
-    public function getPriceTreatment(): ?\eBay\Buy\Browse\Model\PriceTreatmentEnum
+    public function getPriceTreatment(): ?string
     {
         return $this->container['price_treatment'];
     }
@@ -380,11 +380,11 @@ class MarketingPrice implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets price_treatment
      *
-     * @param \eBay\Buy\Browse\Model\PriceTreatmentEnum|null $price_treatment Indicates the pricing treatment (discount) that was applied to the price of the item.<br><br><span class=\"tablenote\"><b>Note:</b> The pricing treatment affects the way and where the discounted price can be displayed.</span>
+     * @param string|null $price_treatment Indicates the pricing treatment (discount) that was applied to the price of the item.<br><br><span class=\"tablenote\"><b>Note:</b> The pricing treatment affects the way and where the discounted price can be displayed.</span>
      *
      * @return $this
      */
-    public function setPriceTreatment(?\eBay\Buy\Browse\Model\PriceTreatmentEnum $price_treatment): static
+    public function setPriceTreatment(?string $price_treatment): static
     {
         if (is_null($price_treatment)) {
             throw new InvalidArgumentException('non-nullable price_treatment cannot be null');

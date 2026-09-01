@@ -65,7 +65,7 @@ class CompanyAddress implements ModelInterface, ArrayAccess, JsonSerializable
         'city' => 'string',
         'company_name' => 'string',
         'contact_url' => 'string',
-        'country' => '\eBay\Buy\Browse\Model\CountryCodeEnum',
+        'country' => 'string',
         'country_name' => 'string',
         'county' => 'string',
         'email' => 'string',
@@ -480,9 +480,9 @@ class CompanyAddress implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Gets country
      *
-     * @return \eBay\Buy\Browse\Model\CountryCodeEnum|null
+     * @return string|null
      */
-    public function getCountry(): ?\eBay\Buy\Browse\Model\CountryCodeEnum
+    public function getCountry(): ?string
     {
         return $this->container['country'];
     }
@@ -490,11 +490,11 @@ class CompanyAddress implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets country
      *
-     * @param \eBay\Buy\Browse\Model\CountryCodeEnum|null $country The two-letter <a href=\"https://www.iso.org/iso-3166-country-codes.html \" target=\"_blank\">ISO 3166</a> standard code for the country of the address.
+     * @param string|null $country The two-letter <a href=\"https://www.iso.org/iso-3166-country-codes.html \" target=\"_blank\">ISO 3166</a> standard code for the country of the address.
      *
      * @return $this
      */
-    public function setCountry(?\eBay\Buy\Browse\Model\CountryCodeEnum $country): static
+    public function setCountry(?string $country): static
     {
         if (is_null($country)) {
             throw new InvalidArgumentException('non-nullable country cannot be null');

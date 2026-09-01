@@ -65,7 +65,7 @@ class Taxes implements ModelInterface, ArrayAccess, JsonSerializable
         'shipping_and_handling_taxed' => 'bool',
         'tax_jurisdiction' => '\eBay\Buy\Browse\Model\TaxJurisdiction',
         'tax_percentage' => 'string',
-        'tax_type' => '\eBay\Buy\Browse\Model\TaxTypeEnum'
+        'tax_type' => 'string'
     ];
 
     /**
@@ -438,9 +438,9 @@ class Taxes implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Gets tax_type
      *
-     * @return \eBay\Buy\Browse\Model\TaxTypeEnum|null
+     * @return string|null
      */
-    public function getTaxType(): ?\eBay\Buy\Browse\Model\TaxTypeEnum
+    public function getTaxType(): ?string
     {
         return $this->container['tax_type'];
     }
@@ -448,11 +448,11 @@ class Taxes implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets tax_type
      *
-     * @param \eBay\Buy\Browse\Model\TaxTypeEnum|null $tax_type This field indicates the type of tax that may be collected for the item.
+     * @param string|null $tax_type This field indicates the type of tax that may be collected for the item.
      *
      * @return $this
      */
-    public function setTaxType(?\eBay\Buy\Browse\Model\TaxTypeEnum $tax_type): static
+    public function setTaxType(?string $tax_type): static
     {
         if (is_null($tax_type)) {
             throw new InvalidArgumentException('non-nullable tax_type cannot be null');

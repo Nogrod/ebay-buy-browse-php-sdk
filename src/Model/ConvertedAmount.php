@@ -60,9 +60,9 @@ class ConvertedAmount implements ModelInterface, ArrayAccess, JsonSerializable
      * @var array<string, string>
      */
     protected static array $openAPITypes = [
-        'converted_from_currency' => '\eBay\Buy\Browse\Model\CurrencyCodeEnum',
+        'converted_from_currency' => 'string',
         'converted_from_value' => 'string',
-        'currency' => '\eBay\Buy\Browse\Model\CurrencyCodeEnum',
+        'currency' => 'string',
         'value' => 'string'
     ];
 
@@ -289,9 +289,9 @@ class ConvertedAmount implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Gets converted_from_currency
      *
-     * @return \eBay\Buy\Browse\Model\CurrencyCodeEnum|null
+     * @return string|null
      */
-    public function getConvertedFromCurrency(): ?\eBay\Buy\Browse\Model\CurrencyCodeEnum
+    public function getConvertedFromCurrency(): ?string
     {
         return $this->container['converted_from_currency'];
     }
@@ -299,11 +299,11 @@ class ConvertedAmount implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets converted_from_currency
      *
-     * @param \eBay\Buy\Browse\Model\CurrencyCodeEnum|null $converted_from_currency The three-letter <a href=\"https://www.iso.org/iso-4217-currency-codes.html \" target=\"_blank\">ISO 4217</a> code representing the currency of the amount in the <code>convertedFromValue</code> field. This value is required or returned only if currency conversion/localization is required, and represents the pre-conversion currency.
+     * @param string|null $converted_from_currency The three-letter <a href=\"https://www.iso.org/iso-4217-currency-codes.html \" target=\"_blank\">ISO 4217</a> code representing the currency of the amount in the <code>convertedFromValue</code> field. This value is required or returned only if currency conversion/localization is required, and represents the pre-conversion currency.
      *
      * @return $this
      */
-    public function setConvertedFromCurrency(?\eBay\Buy\Browse\Model\CurrencyCodeEnum $converted_from_currency): static
+    public function setConvertedFromCurrency(?string $converted_from_currency): static
     {
         if (is_null($converted_from_currency)) {
             throw new InvalidArgumentException('non-nullable converted_from_currency cannot be null');
@@ -343,9 +343,9 @@ class ConvertedAmount implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Gets currency
      *
-     * @return \eBay\Buy\Browse\Model\CurrencyCodeEnum|null
+     * @return string|null
      */
-    public function getCurrency(): ?\eBay\Buy\Browse\Model\CurrencyCodeEnum
+    public function getCurrency(): ?string
     {
         return $this->container['currency'];
     }
@@ -353,11 +353,11 @@ class ConvertedAmount implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets currency
      *
-     * @param \eBay\Buy\Browse\Model\CurrencyCodeEnum|null $currency The three-letter <a href=\"https://www.iso.org/iso-4217-currency-codes.html \" target=\"_blank\">ISO 4217</a> code representing the currency of the amount in the <code>value</code> field. If currency conversion/localization is required, this is the post-conversion currency of the amount in the <code>value</code> field.<br><br><b>Default:</b> The currency of the authenticated user's country.
+     * @param string|null $currency The three-letter <a href=\"https://www.iso.org/iso-4217-currency-codes.html \" target=\"_blank\">ISO 4217</a> code representing the currency of the amount in the <code>value</code> field. If currency conversion/localization is required, this is the post-conversion currency of the amount in the <code>value</code> field.<br><br><b>Default:</b> The currency of the authenticated user's country.
      *
      * @return $this
      */
-    public function setCurrency(?\eBay\Buy\Browse\Model\CurrencyCodeEnum $currency): static
+    public function setCurrency(?string $currency): static
     {
         if (is_null($currency)) {
             throw new InvalidArgumentException('non-nullable currency cannot be null');

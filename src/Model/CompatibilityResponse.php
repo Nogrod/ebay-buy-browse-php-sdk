@@ -60,7 +60,7 @@ class CompatibilityResponse implements ModelInterface, ArrayAccess, JsonSerializ
      * @var array<string, string>
      */
     protected static array $openAPITypes = [
-        'compatibility_status' => '\eBay\Buy\Browse\Model\CompatibilityStatusEnum',
+        'compatibility_status' => 'string',
         'warnings' => '\eBay\Buy\Browse\Model\ErrorDetailV3[]'
     ];
 
@@ -275,9 +275,9 @@ class CompatibilityResponse implements ModelInterface, ArrayAccess, JsonSerializ
     /**
      * Gets compatibility_status
      *
-     * @return \eBay\Buy\Browse\Model\CompatibilityStatusEnum|null
+     * @return string|null
      */
-    public function getCompatibilityStatus(): ?\eBay\Buy\Browse\Model\CompatibilityStatusEnum
+    public function getCompatibilityStatus(): ?string
     {
         return $this->container['compatibility_status'];
     }
@@ -285,11 +285,11 @@ class CompatibilityResponse implements ModelInterface, ArrayAccess, JsonSerializ
     /**
      * Sets compatibility_status
      *
-     * @param \eBay\Buy\Browse\Model\CompatibilityStatusEnum|null $compatibility_status An enumeration value that tells you if the item is compatible with the product. <br><br>The values are: <ul>   <li>   <b> COMPATIBLE</b> - Indicates the item is compatible with the product specified in the request.</li>   <li>   <b> NOT_COMPATIBLE</b> - Indicates the item is not compatible with the product specified in the request. Be sure to check all the <b> value</b> fields to ensure they are correct as errors in the value can also cause this response.</li>   <li> <b> UNDETERMINED</b> - Indicates one or more attributes for the specified product are missing so compatibility cannot be determined.  The response returns the attributes that are missing.</li>  </ul>  Code so that your app gracefully handles any future changes to this list.
+     * @param string|null $compatibility_status An enumeration value that tells you if the item is compatible with the product. <br><br>The values are: <ul>   <li>   <b> COMPATIBLE</b> - Indicates the item is compatible with the product specified in the request.</li>   <li>   <b> NOT_COMPATIBLE</b> - Indicates the item is not compatible with the product specified in the request. Be sure to check all the <b> value</b> fields to ensure they are correct as errors in the value can also cause this response.</li>   <li> <b> UNDETERMINED</b> - Indicates one or more attributes for the specified product are missing so compatibility cannot be determined.  The response returns the attributes that are missing.</li>  </ul>  Code so that your app gracefully handles any future changes to this list.
      *
      * @return $this
      */
-    public function setCompatibilityStatus(?\eBay\Buy\Browse\Model\CompatibilityStatusEnum $compatibility_status): static
+    public function setCompatibilityStatus(?string $compatibility_status): static
     {
         if (is_null($compatibility_status)) {
             throw new InvalidArgumentException('non-nullable compatibility_status cannot be null');

@@ -62,7 +62,7 @@ class SellerCustomPolicy implements ModelInterface, ArrayAccess, JsonSerializabl
     protected static array $openAPITypes = [
         'description' => 'string',
         'label' => 'string',
-        'type' => '\eBay\Buy\Browse\Model\SellerCustomPolicyTypeEnum'
+        'type' => 'string'
     ];
 
     /**
@@ -336,9 +336,9 @@ class SellerCustomPolicy implements ModelInterface, ArrayAccess, JsonSerializabl
     /**
      * Gets type
      *
-     * @return \eBay\Buy\Browse\Model\SellerCustomPolicyTypeEnum|null
+     * @return string|null
      */
-    public function getType(): ?\eBay\Buy\Browse\Model\SellerCustomPolicyTypeEnum
+    public function getType(): ?string
     {
         return $this->container['type'];
     }
@@ -346,11 +346,11 @@ class SellerCustomPolicy implements ModelInterface, ArrayAccess, JsonSerializabl
     /**
      * Sets type
      *
-     * @param \eBay\Buy\Browse\Model\SellerCustomPolicyTypeEnum|null $type The type of custom policy, such as PRODUCT_COMPLIANCE or TAKE_BACK.
+     * @param string|null $type The type of custom policy, such as PRODUCT_COMPLIANCE or TAKE_BACK.
      *
      * @return $this
      */
-    public function setType(?\eBay\Buy\Browse\Model\SellerCustomPolicyTypeEnum $type): static
+    public function setType(?string $type): static
     {
         if (is_null($type)) {
             throw new InvalidArgumentException('non-nullable type cannot be null');

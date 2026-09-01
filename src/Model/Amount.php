@@ -60,7 +60,7 @@ class Amount implements ModelInterface, ArrayAccess, JsonSerializable
      * @var array<string, string>
      */
     protected static array $openAPITypes = [
-        'currency' => '\eBay\Buy\Browse\Model\CurrencyCodeEnum',
+        'currency' => 'string',
         'value' => 'string'
     ];
 
@@ -275,9 +275,9 @@ class Amount implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Gets currency
      *
-     * @return \eBay\Buy\Browse\Model\CurrencyCodeEnum|null
+     * @return string|null
      */
-    public function getCurrency(): ?\eBay\Buy\Browse\Model\CurrencyCodeEnum
+    public function getCurrency(): ?string
     {
         return $this->container['currency'];
     }
@@ -285,11 +285,11 @@ class Amount implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets currency
      *
-     * @param \eBay\Buy\Browse\Model\CurrencyCodeEnum|null $currency The list of valid currencies. Each <a href=\"https://www.iso.org/iso-4217-currency-codes.html \" target=\"_blank\">ISO 4217</a> currency code includes the currency name followed by the numeric value.<br><br>For example, the Canadian Dollar code (CAD) would take the following form: <code>Canadian Dollar, 124</code>.
+     * @param string|null $currency The list of valid currencies. Each <a href=\"https://www.iso.org/iso-4217-currency-codes.html \" target=\"_blank\">ISO 4217</a> currency code includes the currency name followed by the numeric value.<br><br>For example, the Canadian Dollar code (CAD) would take the following form: <code>Canadian Dollar, 124</code>.
      *
      * @return $this
      */
-    public function setCurrency(?\eBay\Buy\Browse\Model\CurrencyCodeEnum $currency): static
+    public function setCurrency(?string $currency): static
     {
         if (is_null($currency)) {
             throw new InvalidArgumentException('non-nullable currency cannot be null');

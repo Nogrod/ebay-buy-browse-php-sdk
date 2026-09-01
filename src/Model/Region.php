@@ -61,7 +61,7 @@ class Region implements ModelInterface, ArrayAccess, JsonSerializable
      */
     protected static array $openAPITypes = [
         'region_name' => 'string',
-        'region_type' => '\eBay\Buy\Browse\Model\RegionTypeEnum'
+        'region_type' => 'string'
     ];
 
     /**
@@ -302,9 +302,9 @@ class Region implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Gets region_type
      *
-     * @return \eBay\Buy\Browse\Model\RegionTypeEnum|null
+     * @return string|null
      */
-    public function getRegionType(): ?\eBay\Buy\Browse\Model\RegionTypeEnum
+    public function getRegionType(): ?string
     {
         return $this->container['region_type'];
     }
@@ -312,11 +312,11 @@ class Region implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets region_type
      *
-     * @param \eBay\Buy\Browse\Model\RegionTypeEnum|null $region_type An enumeration value that indicates the type of region for the tax jurisdiction. <br><br><b> Valid Values: </b> <ul><li><b> STATE_OR_PROVINCE </b> - Indicates the region is a state or province within a country, such as California or New York in the US, or Ontario or Alberta in Canada.</li><li><b> COUNTRY </b> - Indicates the region is a single country.</li></ul>  Code so that your app gracefully handles any future changes to this list.
+     * @param string|null $region_type An enumeration value that indicates the type of region for the tax jurisdiction. <br><br><b> Valid Values: </b> <ul><li><b> STATE_OR_PROVINCE </b> - Indicates the region is a state or province within a country, such as California or New York in the US, or Ontario or Alberta in Canada.</li><li><b> COUNTRY </b> - Indicates the region is a single country.</li></ul>  Code so that your app gracefully handles any future changes to this list.
      *
      * @return $this
      */
-    public function setRegionType(?\eBay\Buy\Browse\Model\RegionTypeEnum $region_type): static
+    public function setRegionType(?string $region_type): static
     {
         if (is_null($region_type)) {
             throw new InvalidArgumentException('non-nullable region_type cannot be null');

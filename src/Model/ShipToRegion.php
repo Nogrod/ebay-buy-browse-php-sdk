@@ -62,7 +62,7 @@ class ShipToRegion implements ModelInterface, ArrayAccess, JsonSerializable
     protected static array $openAPITypes = [
         'region_id' => 'string',
         'region_name' => 'string',
-        'region_type' => '\eBay\Buy\Browse\Model\RegionTypeEnum'
+        'region_type' => 'string'
     ];
 
     /**
@@ -336,9 +336,9 @@ class ShipToRegion implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Gets region_type
      *
-     * @return \eBay\Buy\Browse\Model\RegionTypeEnum|null
+     * @return string|null
      */
-    public function getRegionType(): ?\eBay\Buy\Browse\Model\RegionTypeEnum
+    public function getRegionType(): ?string
     {
         return $this->container['region_type'];
     }
@@ -346,11 +346,11 @@ class ShipToRegion implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets region_type
      *
-     * @param \eBay\Buy\Browse\Model\RegionTypeEnum|null $region_type An enumeration value that indicates the level or type of shipping region. <br><br><b> Valid Values: </b> <ul><li><b> COUNTRY_REGION </b> - Indicates the region is a domestic region or special location within a country.</li><li><b> STATE_OR_PROVINCE </b> - Indicates the region is a state or province within a country, such as California or New York in the US, or Ontario or Alberta in Canada.</li><li><b> COUNTRY </b> - Indicates the region is a single country.</li><li><b> WORLD_REGION </b> - Indicates the region is a world region, such as Africa, the Middle East, or Southeast Asia.</li><li><b> WORLDWIDE </b> - Indicates the region is the entire world. This value is only applicable for included shiping regions, and not excluded shipping regions.</li></ul> For more detail on the actual <b>regionName</b>/<b>regionId</b> values that will be returned based on the <b>regionType</b> value, see the <a href=\"/develop/api/buy/browse_api#buy-browse_api-item-getitem.shiptoregion.regionid\">regionId</a> and/or <a href=\"/develop/api/buy/browse_api#buy-browse_api-item-getitem.shiptoregion.regionname\">regionName</a> field descriptions.<br><br> Code so that your app gracefully handles any future changes to this list.
+     * @param string|null $region_type An enumeration value that indicates the level or type of shipping region. <br><br><b> Valid Values: </b> <ul><li><b> COUNTRY_REGION </b> - Indicates the region is a domestic region or special location within a country.</li><li><b> STATE_OR_PROVINCE </b> - Indicates the region is a state or province within a country, such as California or New York in the US, or Ontario or Alberta in Canada.</li><li><b> COUNTRY </b> - Indicates the region is a single country.</li><li><b> WORLD_REGION </b> - Indicates the region is a world region, such as Africa, the Middle East, or Southeast Asia.</li><li><b> WORLDWIDE </b> - Indicates the region is the entire world. This value is only applicable for included shiping regions, and not excluded shipping regions.</li></ul> For more detail on the actual <b>regionName</b>/<b>regionId</b> values that will be returned based on the <b>regionType</b> value, see the <a href=\"/develop/api/buy/browse_api#buy-browse_api-item-getitem.shiptoregion.regionid\">regionId</a> and/or <a href=\"/develop/api/buy/browse_api#buy-browse_api-item-getitem.shiptoregion.regionname\">regionName</a> field descriptions.<br><br> Code so that your app gracefully handles any future changes to this list.
      *
      * @return $this
      */
-    public function setRegionType(?\eBay\Buy\Browse\Model\RegionTypeEnum $region_type): static
+    public function setRegionType(?string $region_type): static
     {
         if (is_null($region_type)) {
             throw new InvalidArgumentException('non-nullable region_type cannot be null');

@@ -62,7 +62,7 @@ class ShippingOption implements ModelInterface, ArrayAccess, JsonSerializable
     protected static array $openAPITypes = [
         'additional_shipping_cost_per_unit' => '\eBay\Buy\Browse\Model\ConvertedAmount',
         'cut_off_date_used_for_estimate' => 'string',
-        'fulfilled_through' => '\eBay\Buy\Browse\Model\FulfilledThroughEnum',
+        'fulfilled_through' => 'string',
         'guaranteed_delivery' => 'bool',
         'import_charges' => '\eBay\Buy\Browse\Model\ConvertedAmount',
         'max_estimated_delivery_date' => 'string',
@@ -420,9 +420,9 @@ class ShippingOption implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Gets fulfilled_through
      *
-     * @return \eBay\Buy\Browse\Model\FulfilledThroughEnum|null
+     * @return string|null
      */
-    public function getFulfilledThrough(): ?\eBay\Buy\Browse\Model\FulfilledThroughEnum
+    public function getFulfilledThrough(): ?string
     {
         return $this->container['fulfilled_through'];
     }
@@ -430,11 +430,11 @@ class ShippingOption implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets fulfilled_through
      *
-     * @param \eBay\Buy\Browse\Model\FulfilledThroughEnum|null $fulfilled_through If the item is being shipped by the eBay <a href=\"https://pages.ebay.com/seller-center/shipping/global-shipping-program.html \" target=\"_blank\">Global Shipping program</a>, this field returns <code>GLOBAL_SHIPPING</code>.<br><br>If the item is being shipped using the eBay International Shipping program, this field returns <code>INTERNATIONAL_SHIPPING</code>. <br><br>Otherwise, this field is null.
+     * @param string|null $fulfilled_through If the item is being shipped by the eBay <a href=\"https://pages.ebay.com/seller-center/shipping/global-shipping-program.html \" target=\"_blank\">Global Shipping program</a>, this field returns <code>GLOBAL_SHIPPING</code>.<br><br>If the item is being shipped using the eBay International Shipping program, this field returns <code>INTERNATIONAL_SHIPPING</code>. <br><br>Otherwise, this field is null.
      *
      * @return $this
      */
-    public function setFulfilledThrough(?\eBay\Buy\Browse\Model\FulfilledThroughEnum $fulfilled_through): static
+    public function setFulfilledThrough(?string $fulfilled_through): static
     {
         if (is_null($fulfilled_through)) {
             throw new InvalidArgumentException('non-nullable fulfilled_through cannot be null');

@@ -60,7 +60,7 @@ class PaymentMethodBrand implements ModelInterface, ArrayAccess, JsonSerializabl
      * @var array<string, string>
      */
     protected static array $openAPITypes = [
-        'payment_method_brand_type' => '\eBay\Buy\Browse\Model\PaymentMethodBrandEnum',
+        'payment_method_brand_type' => 'string',
         'logo_image' => '\eBay\Buy\Browse\Model\Image'
     ];
 
@@ -275,9 +275,9 @@ class PaymentMethodBrand implements ModelInterface, ArrayAccess, JsonSerializabl
     /**
      * Gets payment_method_brand_type
      *
-     * @return \eBay\Buy\Browse\Model\PaymentMethodBrandEnum|null
+     * @return string|null
      */
-    public function getPaymentMethodBrandType(): ?\eBay\Buy\Browse\Model\PaymentMethodBrandEnum
+    public function getPaymentMethodBrandType(): ?string
     {
         return $this->container['payment_method_brand_type'];
     }
@@ -285,11 +285,11 @@ class PaymentMethodBrand implements ModelInterface, ArrayAccess, JsonSerializabl
     /**
      * Sets payment_method_brand_type
      *
-     * @param \eBay\Buy\Browse\Model\PaymentMethodBrandEnum|null $payment_method_brand_type The payment method brand, such as Visa or PayPal.
+     * @param string|null $payment_method_brand_type The payment method brand, such as Visa or PayPal.
      *
      * @return $this
      */
-    public function setPaymentMethodBrandType(?\eBay\Buy\Browse\Model\PaymentMethodBrandEnum $payment_method_brand_type): static
+    public function setPaymentMethodBrandType(?string $payment_method_brand_type): static
     {
         if (is_null($payment_method_brand_type)) {
             throw new InvalidArgumentException('non-nullable payment_method_brand_type cannot be null');

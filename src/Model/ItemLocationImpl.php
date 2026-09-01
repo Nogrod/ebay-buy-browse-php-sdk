@@ -63,7 +63,7 @@ class ItemLocationImpl implements ModelInterface, ArrayAccess, JsonSerializable
         'address_line1' => 'string',
         'address_line2' => 'string',
         'city' => 'string',
-        'country' => '\eBay\Buy\Browse\Model\CountryCodeEnum',
+        'country' => 'string',
         'county' => 'string',
         'postal_code' => 'string',
         'state_or_province' => 'string'
@@ -391,9 +391,9 @@ class ItemLocationImpl implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Gets country
      *
-     * @return \eBay\Buy\Browse\Model\CountryCodeEnum|null
+     * @return string|null
      */
-    public function getCountry(): ?\eBay\Buy\Browse\Model\CountryCodeEnum
+    public function getCountry(): ?string
     {
         return $this->container['country'];
     }
@@ -401,11 +401,11 @@ class ItemLocationImpl implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets country
      *
-     * @param \eBay\Buy\Browse\Model\CountryCodeEnum|null $country The two-letter <a href=\"https://www.iso.org/iso-3166-country-codes.html \" target=\"_blank\">ISO 3166</a> standard code that indicates the country in which the item is located.
+     * @param string|null $country The two-letter <a href=\"https://www.iso.org/iso-3166-country-codes.html \" target=\"_blank\">ISO 3166</a> standard code that indicates the country in which the item is located.
      *
      * @return $this
      */
-    public function setCountry(?\eBay\Buy\Browse\Model\CountryCodeEnum $country): static
+    public function setCountry(?string $country): static
     {
         if (is_null($country)) {
             throw new InvalidArgumentException('non-nullable country cannot be null');

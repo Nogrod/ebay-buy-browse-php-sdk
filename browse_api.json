@@ -2257,8 +2257,8 @@
         "type": "object",
         "properties": {
           "selection": {
-            "description": "This field indicates whether the add-on service must be selected for the item.",
-            "$ref": "#/components/schemas/AddonServiceSelectionEnum"
+            "type": "string",
+            "description": "This field indicates whether the add-on service must be selected for the item."
           },
           "serviceFee": {
             "description": "The amount charged for the add-on service.",
@@ -2269,8 +2269,8 @@
             "description": "The ID number of the add-on service."
           },
           "serviceType": {
-            "description": "The type of add-on service, such as <code>AUTHENTICITY_GUARANTEE</code>.",
-            "$ref": "#/components/schemas/AddonServiceTypeEnum"
+            "type": "string",
+            "description": "The type of add-on service, such as <code>AUTHENTICITY_GUARANTEE</code>."
           }
         },
         "description": "This type defines an add-on service that may be selected for an item or that may apply automatically. A charge may be associated with the add-on service."
@@ -2306,8 +2306,8 @@
             "description": "The city of the address."
           },
           "country": {
-            "description": "The two-letter <a href=\"https://www.iso.org/iso-3166-country-codes.html \" target=\"_blank\">ISO 3166</a> standard code for the country of the address.",
-            "$ref": "#/components/schemas/CountryCodeEnum"
+            "type": "string",
+            "description": "The two-letter <a href=\"https://www.iso.org/iso-3166-country-codes.html \" target=\"_blank\">ISO 3166</a> standard code for the country of the address."
           },
           "county": {
             "type": "string",
@@ -2329,8 +2329,8 @@
         "description": "This type describes the value of a monetary amount as represented by a global currency. ",
         "properties": {
           "currency": {
-            "description": "The list of valid currencies. Each <a href=\"https://www.iso.org/iso-4217-currency-codes.html \" target=\"_blank\">ISO 4217</a> currency code includes the currency name followed by the numeric value.<br><br>For example, the Canadian Dollar code (CAD) would take the following form: <code>Canadian Dollar, 124</code>.",
-            "$ref": "#/components/schemas/CurrencyCodeEnum"
+            "type": "string",
+            "description": "The list of valid currencies. Each <a href=\"https://www.iso.org/iso-4217-currency-codes.html \" target=\"_blank\">ISO 4217</a> currency code includes the currency name followed by the numeric value.<br><br>For example, the Canadian Dollar code (CAD) would take the following form: <code>Canadian Dollar, 124</code>."
           },
           "value": {
             "type": "string",
@@ -2506,8 +2506,8 @@
             "$ref": "#/components/schemas/Amount"
           },
           "discountType": {
-            "description": "The type of discount that the coupon applies.",
-            "$ref": "#/components/schemas/CouponDiscountTypeEnum"
+            "type": "string",
+            "description": "The type of discount that the coupon applies."
           },
           "message": {
             "type": "string",
@@ -2620,8 +2620,8 @@
             "description": "The contact URL of the product manufacturer."
           },
           "country": {
-            "description": "The two-letter <a href=\"https://www.iso.org/iso-3166-country-codes.html \" target=\"_blank\">ISO 3166</a> standard code for the country of the address.",
-            "$ref": "#/components/schemas/CountryCodeEnum"
+            "type": "string",
+            "description": "The two-letter <a href=\"https://www.iso.org/iso-3166-country-codes.html \" target=\"_blank\">ISO 3166</a> standard code for the country of the address."
           },
           "countryName": {
             "type": "string",
@@ -2706,8 +2706,8 @@
         "type": "object",
         "properties": {
           "compatibilityStatus": {
-            "description": "An enumeration value that tells you if the item is compatible with the product. <br><br>The values are: <ul>   <li>   <b> COMPATIBLE</b> - Indicates the item is compatible with the product specified in the request.</li>   <li>   <b> NOT_COMPATIBLE</b> - Indicates the item is not compatible with the product specified in the request. Be sure to check all the <b> value</b> fields to ensure they are correct as errors in the value can also cause this response.</li>   <li> <b> UNDETERMINED</b> - Indicates one or more attributes for the specified product are missing so compatibility cannot be determined.  The response returns the attributes that are missing.</li>  </ul>  Code so that your app gracefully handles any future changes to this list.",
-            "$ref": "#/components/schemas/CompatibilityStatusEnum"
+            "type": "string",
+            "description": "An enumeration value that tells you if the item is compatible with the product. <br><br>The values are: <ul>   <li>   <b> COMPATIBLE</b> - Indicates the item is compatible with the product specified in the request.</li>   <li>   <b> NOT_COMPATIBLE</b> - Indicates the item is not compatible with the product specified in the request. Be sure to check all the <b> value</b> fields to ensure they are correct as errors in the value can also cause this response.</li>   <li> <b> UNDETERMINED</b> - Indicates one or more attributes for the specified product are missing so compatibility cannot be determined.  The response returns the attributes that are missing.</li>  </ul>  Code so that your app gracefully handles any future changes to this list."
           },
           "warnings": {
             "type": "array",
@@ -2789,16 +2789,16 @@
         "type": "object",
         "properties": {
           "convertedFromCurrency": {
-            "description": "The three-letter <a href=\"https://www.iso.org/iso-4217-currency-codes.html \" target=\"_blank\">ISO 4217</a> code representing the currency of the amount in the <code>convertedFromValue</code> field. This value is required or returned only if currency conversion/localization is required, and represents the pre-conversion currency.",
-            "$ref": "#/components/schemas/CurrencyCodeEnum"
+            "type": "string",
+            "description": "The three-letter <a href=\"https://www.iso.org/iso-4217-currency-codes.html \" target=\"_blank\">ISO 4217</a> code representing the currency of the amount in the <code>convertedFromValue</code> field. This value is required or returned only if currency conversion/localization is required, and represents the pre-conversion currency."
           },
           "convertedFromValue": {
             "type": "string",
             "description": "The monetary amount before any conversion is performed, in the currency specified by the <b>convertedFromCurrency</b> field. This value is required or returned only if currency conversion/localization is required. The <b>value</b> field contains the converted amount of this value, in the currency specified by the <b>currency</b> field."
           },
           "currency": {
-            "description": "The three-letter <a href=\"https://www.iso.org/iso-4217-currency-codes.html \" target=\"_blank\">ISO 4217</a> code representing the currency of the amount in the <code>value</code> field. If currency conversion/localization is required, this is the post-conversion currency of the amount in the <code>value</code> field.<br><br><b>Default:</b> The currency of the authenticated user's country.",
-            "$ref": "#/components/schemas/CurrencyCodeEnum"
+            "type": "string",
+            "description": "The three-letter <a href=\"https://www.iso.org/iso-4217-currency-codes.html \" target=\"_blank\">ISO 4217</a> code representing the currency of the amount in the <code>value</code> field. If currency conversion/localization is required, this is the post-conversion currency of the amount in the <code>value</code> field.<br><br><b>Default:</b> The currency of the authenticated user's country."
           },
           "value": {
             "type": "string",
@@ -3007,8 +3007,8 @@
             "$ref": "#/components/schemas/ConvertedAmount"
           },
           "priceDisplayCondition": {
-            "description": "Indicates when in the buying flow the item's price can appear for minimum advertised price (MAP) items, which is the lowest price a retailer can advertise/show for this item.",
-            "$ref": "#/components/schemas/PriceDisplayConditionEnum"
+            "type": "string",
+            "description": "Indicates when in the buying flow the item's price can appear for minimum advertised price (MAP) items, which is the lowest price a retailer can advertise/show for this item."
           },
           "primaryItemGroup": {
             "description": "The container that returns details of a primary item group (parent ID of an item group). An item group is an item that has various aspect differences, such as color, size, storage capacity, etc. <br><br>When an item group is created, one of the item variations, such as the red shirt size L, is chosen as the \"parent\". All the other items in the group are the children, such as the blue shirt size L, red shirt size M, etc.<br><br><span class=\"tablenote\"><b> Note: </b> This container is returned if the <b> item_id</b> in the request is for an item group (items with variations, such as color and size). This container is also returned on a request for <b> item_group_ids</b>.</span>",
@@ -3791,19 +3791,19 @@
             "format": "int32"
           },
           "availabilityThresholdType": {
-            "description": "<a name=\"display-item-quantity\"></a> This field is return only when the seller sets their <b> Display Item Quantity</b> preference to <b> Display \"More than 10 available\" in your listing (if applicable)</b>. The value of this field will be <code> MORE_THAN</code>. This indicates that the seller has more than the 'quantity display preference', which is 10, in stock for this item.    <br><br> The following are the display item quantity preferences the seller can set. <br><ul><li> <b> Display \"More than 10 available\" in your listing (if applicable) </b><ul> <li>If the seller enables this preference, this field is returned as long as there are more than 10 of this item in inventory.</li>  <li> If the quantity is equal to 10 or drops below 10, this field is not returned and the estimated quantity of the item is returned in the <b> estimatedAvailableQuantity</b> field.</li></ul> </li> <li> <b> Display the exact quantity in your items</b> <br>If the seller enables this preference, the <b> availabilityThresholdType</b> and <b> availabilityThreshold</b> fields are not returned and the estimated quantity of the item is returned in the <b> estimatedAvailableQuantity</b> field.<br><br><b> Note: </b> Because the quantity of an item can change several times within a second, it is impossible to return the exact quantity. </li></ul>   <br>Code so that your app gracefully handles any future changes to these preferences.",
-            "$ref": "#/components/schemas/AvailabilityThresholdEnum"
+            "type": "string",
+            "description": "<a name=\"display-item-quantity\"></a> This field is return only when the seller sets their <b> Display Item Quantity</b> preference to <b> Display \"More than 10 available\" in your listing (if applicable)</b>. The value of this field will be <code> MORE_THAN</code>. This indicates that the seller has more than the 'quantity display preference', which is 10, in stock for this item.    <br><br> The following are the display item quantity preferences the seller can set. <br><ul><li> <b> Display \"More than 10 available\" in your listing (if applicable) </b><ul> <li>If the seller enables this preference, this field is returned as long as there are more than 10 of this item in inventory.</li>  <li> If the quantity is equal to 10 or drops below 10, this field is not returned and the estimated quantity of the item is returned in the <b> estimatedAvailableQuantity</b> field.</li></ul> </li> <li> <b> Display the exact quantity in your items</b> <br>If the seller enables this preference, the <b> availabilityThresholdType</b> and <b> availabilityThreshold</b> fields are not returned and the estimated quantity of the item is returned in the <b> estimatedAvailableQuantity</b> field.<br><br><b> Note: </b> Because the quantity of an item can change several times within a second, it is impossible to return the exact quantity. </li></ul>   <br>Code so that your app gracefully handles any future changes to these preferences."
           },
           "deliveryOptions": {
             "type": "array",
             "description": "An array of available delivery options. <br><br><b> Valid Values: </b> SHIP_TO_HOME, SELLER_ARRANGED_LOCAL_PICKUP, IN_STORE_PICKUP, PICKUP_DROP_OFF, or DIGITAL_DELIVERY <br><br>Code so that your app gracefully handles any future changes to this list. ",
             "items": {
-              "$ref": "#/components/schemas/DeliveryOptionsEnum"
+              "type": "string"
             }
           },
           "estimatedAvailabilityStatus": {
-            "description": "An enumeration value representing the inventory status of this item.<br><br><span class=\"tablenote\"><b> Note: </b>Be sure to review the <b>itemEndDate</b> field to determine whether the item is available for purchase.</span><br><br><b> Valid Values: </b> IN_STOCK, LIMITED_STOCK, or OUT_OF_STOCK <br><br>Code so that your app gracefully handles any future changes to this list.",
-            "$ref": "#/components/schemas/AvailabilityStatusEnum"
+            "type": "string",
+            "description": "An enumeration value representing the inventory status of this item.<br><br><span class=\"tablenote\"><b> Note: </b>Be sure to review the <b>itemEndDate</b> field to determine whether the item is available for purchase.</span><br><br><b> Valid Values: </b> IN_STOCK, LIMITED_STOCK, or OUT_OF_STOCK <br><br>Code so that your app gracefully handles any future changes to this list."
           },
           "estimatedAvailableQuantity": {
             "type": "integer",
@@ -4127,8 +4127,8 @@
             "description": "The unique identifier of the eBay listing that contains the item. This is the traditional/legacy ID that is often seen in the URL of the listing View Item page."
           },
           "listingMarketplaceId": {
-            "description": "The ID of the eBay marketplace where the item is listed.",
-            "$ref": "#/components/schemas/MarketplaceIdEnum"
+            "type": "string",
+            "description": "The ID of the eBay marketplace where the item is listed."
           },
           "localizedAspects": {
             "type": "array",
@@ -4178,8 +4178,8 @@
             "$ref": "#/components/schemas/ConvertedAmount"
           },
           "priceDisplayCondition": {
-            "description": "Indicates when in the buying flow the item's price can appear for minimum advertised price (MAP) items, which is the lowest price a retailer can advertise/show for this item.",
-            "$ref": "#/components/schemas/PriceDisplayConditionEnum"
+            "type": "string",
+            "description": "Indicates when in the buying flow the item's price can appear for minimum advertised price (MAP) items, which is the lowest price a retailer can advertise/show for this item."
           },
           "primaryItemGroup": {
             "description": "The container that returns details of a primary item group (parent ID of an item group). An item group is an item that has various aspect differences, such as color, size, storage capacity, etc. <br><br>When an item group is created, one of the item variations, such as the red shirt size L, is chosen as the \"parent\". All the other items in the group are the children, such as the blue shirt size L, red shirt size M, etc.<br><br><span class=\"tablenote\"><b> Note: </b> This container is returned only if the <b> item_id</b> in the request is for an item group (items with variations, such as color and size).</span>",
@@ -4409,8 +4409,8 @@
             "description": "The title of the item that appears on the item group page. An item group is an item that has various aspect differences, such as color, size, storage capacity, etc. "
           },
           "itemGroupType": {
-            "description": "An enumeration value that indicates the type of the item group. An item group is an item that has various aspect differences, such as color, size, storage capacity, etc.",
-            "$ref": "#/components/schemas/ItemGroupTypeEnum"
+            "type": "string",
+            "description": "An enumeration value that indicates the type of the item group. An item group is an item that has various aspect differences, such as color, size, storage capacity, etc."
           }
         },
         "description": "The type that defines the fields for the details of each item in an item group. An item group is  an item that has various aspect differences, such as color, size, storage capacity, etc. When an item group is created, one of the item variations, such as the red shirt size L, is chosen as the \"parent\". All the other items in the group are the children, such as the blue shirt size L, red shirt size M, etc. <br><br><span class=\"tablenote\"><b> Note: </b> This container is returned only if the <b> item_id</b> in the request is an item group (parent ID of an item with variations).</span>"
@@ -4438,8 +4438,8 @@
             "description": "The city in which the item is located.<br><br><b>Restriction:</b> This field is populated in the <code>search</code> method response <i>only</i> when <code>fieldgroups</code> = <code>EXTENDED</code>."
           },
           "country": {
-            "description": "The two-letter <a href=\"https://www.iso.org/iso-3166-country-codes.html \" target=\"_blank\">ISO 3166</a> standard code that indicates the country in which the item is located.",
-            "$ref": "#/components/schemas/CountryCodeEnum"
+            "type": "string",
+            "description": "The two-letter <a href=\"https://www.iso.org/iso-3166-country-codes.html \" target=\"_blank\">ISO 3166</a> standard code that indicates the country in which the item is located."
           },
           "county": {
             "type": "string",
@@ -4464,8 +4464,8 @@
             "description": "This indicates if the seller has enabled the Extended Holiday Returns feature on the item. Extended Holiday Returns are only applicable during the US holiday season, and gives buyers extra time to return an item. This 'extra time' will typically extend beyond what is set through the <b> returnPeriod</b> value."
           },
           "refundMethod": {
-            "description": "An enumeration value that indicates how a buyer is refunded when an item is returned. <br><br><b> Valid Values: </b> MONEY_BACK or MERCHANDISE_CREDIT  <br><br>Code so that your app gracefully handles any future changes to this list.",
-            "$ref": "#/components/schemas/RefundMethodEnum"
+            "type": "string",
+            "description": "An enumeration value that indicates how a buyer is refunded when an item is returned. <br><br><b> Valid Values: </b> MONEY_BACK or MERCHANDISE_CREDIT  <br><br>Code so that your app gracefully handles any future changes to this list."
           },
           "restockingFeePercentage": {
             "type": "string",
@@ -4476,8 +4476,8 @@
             "description": "Text written by the seller describing what the buyer needs to do in order to return the item."
           },
           "returnMethod": {
-            "description": "An enumeration value that indicates the alternative methods for a full refund when an item is returned. This field is returned if the seller offers the buyer an item replacement or exchange instead of a monetary refund. <br><br><b> Valid Values: </b>  <ul><li><b> REPLACEMENT</b> - Indicates that the buyer has the option of receiving money back for the returned item, or they can choose to have the seller replace the item with an identical item.</li>  <li><b> EXCHANGE</b> - Indicates that the buyer has the option of receiving money back for the returned item, or they can exchange the item for another similar item.</li></ul>  Code so that your app gracefully handles any future changes to this list.",
-            "$ref": "#/components/schemas/ReturnMethodEnum"
+            "type": "string",
+            "description": "An enumeration value that indicates the alternative methods for a full refund when an item is returned. This field is returned if the seller offers the buyer an item replacement or exchange instead of a monetary refund. <br><br><b> Valid Values: </b>  <ul><li><b> REPLACEMENT</b> - Indicates that the buyer has the option of receiving money back for the returned item, or they can choose to have the seller replace the item with an identical item.</li>  <li><b> EXCHANGE</b> - Indicates that the buyer has the option of receiving money back for the returned item, or they can exchange the item for another similar item.</li></ul>  Code so that your app gracefully handles any future changes to this list."
           },
           "returnPeriod": {
             "description": "The amount of time the buyer has to return the item after the purchase date.",
@@ -4488,8 +4488,8 @@
             "description": "Indicates whether the seller accepts returns for the item."
           },
           "returnShippingCostPayer": {
-            "description": "This enumeration value indicates whether the buyer or seller is responsible for return shipping costs when an item is returned. <br><br><b> Valid Values: </b> <ul><li><b> SELLER</b> - Indicates the seller will pay for the shipping costs to return the item.</li>  <li><b> BUYER</b> - Indicates the buyer will pay for the shipping costs to return the item.</li>  </ul>  Code so that your app gracefully handles any future changes to this list.",
-            "$ref": "#/components/schemas/ReturnShippingCostPayerEnum"
+            "type": "string",
+            "description": "This enumeration value indicates whether the buyer or seller is responsible for return shipping costs when an item is returned. <br><br><b> Valid Values: </b> <ul><li><b> SELLER</b> - Indicates the seller will pay for the shipping costs to return the item.</li>  <li><b> BUYER</b> - Indicates the buyer will pay for the shipping costs to return the item.</li>  </ul>  Code so that your app gracefully handles any future changes to this list."
           }
         },
         "description": "The type that defines the fields for the seller's return policy."
@@ -4532,8 +4532,8 @@
             }
           },
           "compatibilityMatch": {
-            "description": "This indicates how well an item matches the <code>compatibility_filter</code> product attributes.<br><br><b>Valid Values:</b><ul><li><code>EXACT</code></li><li><code>POSSIBLE</code></li></ul>",
-            "$ref": "#/components/schemas/CompatibilityMatchEnum"
+            "type": "string",
+            "description": "This indicates how well an item matches the <code>compatibility_filter</code> product attributes.<br><br><b>Valid Values:</b><ul><li><code>EXACT</code></li><li><code>POSSIBLE</code></li></ul>"
           },
           "compatibilityProperties": {
             "type": "array",
@@ -4622,8 +4622,8 @@
             "description": "The unique identifier of the eBay listing that contains the item. This is the traditional/legacy ID that is often seen in the URL of the listing View Item page."
           },
           "listingMarketplaceId": {
-            "description": "The ID of the eBay marketplace on which the seller listed the item.",
-            "$ref": "#/components/schemas/MarketplaceIdEnum"
+            "type": "string",
+            "description": "The ID of the eBay marketplace on which the seller listed the item."
           },
           "marketingPrice": {
             "description": "This container is returned if the item is eligible for a seller discount and contains the item's original price, and the seller discount amount and percentage.",
@@ -4641,8 +4641,8 @@
             "$ref": "#/components/schemas/ConvertedAmount"
           },
           "priceDisplayCondition": {
-            "description": "Indicates when in the buying flow the item's price can appear for minimum advertised price (MAP) items, which is the lowest price a retailer can advertise/show for this item.",
-            "$ref": "#/components/schemas/PriceDisplayConditionEnum"
+            "type": "string",
+            "description": "Indicates when in the buying flow the item's price can appear for minimum advertised price (MAP) items, which is the lowest price a retailer can advertise/show for this item."
           },
           "priorityListing": {
             "type": "boolean",
@@ -4746,8 +4746,8 @@
             "description": "The city of the address."
           },
           "country": {
-            "description": "The two-letter <a href=\"https://www.iso.org/iso-3166-country-codes.html \" target=\"_blank\">ISO 3166</a> standard code for the country of the address.",
-            "$ref": "#/components/schemas/CountryCodeEnum"
+            "type": "string",
+            "description": "The two-letter <a href=\"https://www.iso.org/iso-3166-country-codes.html \" target=\"_blank\">ISO 3166</a> standard code for the country of the address."
           },
           "countryName": {
             "type": "string",
@@ -4784,8 +4784,8 @@
             "$ref": "#/components/schemas/ConvertedAmount"
           },
           "priceTreatment": {
-            "description": "Indicates the pricing treatment (discount) that was applied to the price of the item.<br><br><span class=\"tablenote\"><b>Note:</b> The pricing treatment affects the way and where the discounted price can be displayed.</span>",
-            "$ref": "#/components/schemas/PriceTreatmentEnum"
+            "type": "string",
+            "description": "Indicates the pricing treatment (discount) that was applied to the price of the item.<br><br><span class=\"tablenote\"><b>Note:</b> The pricing treatment affects the way and where the discounted price can be displayed.</span>"
           }
         },
         "description": "The type that defines the fields that describe a seller discount."
@@ -4858,8 +4858,8 @@
         "description": "This type defines information about the payment method for a listing.",
         "properties": {
           "paymentMethodType": {
-            "description": "The payment method type, such as credit card or cash.",
-            "$ref": "#/components/schemas/PaymentMethodTypeEnum"
+            "type": "string",
+            "description": "The payment method type, such as credit card or cash."
           },
           "paymentMethodBrands": {
             "type": "array",
@@ -4872,14 +4872,14 @@
             "type": "array",
             "description": "The payment instructions for the buyer, such as <i>cash in person</i> or <i>contact seller</i>.",
             "items": {
-              "$ref": "#/components/schemas/PaymentInstructionEnum"
+              "type": "string"
             }
           },
           "sellerInstructions": {
             "type": "array",
             "description": "The seller instructions to the buyer, such as <i>accepts credit cards</i> or <i>see description</i>.",
             "items": {
-              "$ref": "#/components/schemas/SellerInstructionEnum"
+              "type": "string"
             }
           }
         }
@@ -4889,8 +4889,8 @@
         "description": "This type defines information about the brand for a payment method.",
         "properties": {
           "paymentMethodBrandType": {
-            "description": "The payment method brand, such as Visa or PayPal.",
-            "$ref": "#/components/schemas/PaymentMethodBrandEnum"
+            "type": "string",
+            "description": "The payment method brand, such as Visa or PayPal."
           },
           "logoImage": {
             "description": "The details of the logo image, such as the size and URL.<br><br><span class=\"tablenote\"> <b> Note: </b> Currently, only the <b>imageUrl</b> is populated.</span>",
@@ -5186,8 +5186,8 @@
             "description": "A localized text string that indicates the name of the region. Taxes are generally charged at the state/province level or at the country level in the case of VAT tax. "
           },
           "regionType": {
-            "description": "An enumeration value that indicates the type of region for the tax jurisdiction. <br><br><b> Valid Values: </b> <ul><li><b> STATE_OR_PROVINCE </b> - Indicates the region is a state or province within a country, such as California or New York in the US, or Ontario or Alberta in Canada.</li><li><b> COUNTRY </b> - Indicates the region is a single country.</li></ul>  Code so that your app gracefully handles any future changes to this list.",
-            "$ref": "#/components/schemas/RegionTypeEnum"
+            "type": "string",
+            "description": "An enumeration value that indicates the type of region for the tax jurisdiction. <br><br><b> Valid Values: </b> <ul><li><b> STATE_OR_PROVINCE </b> - Indicates the region is a state or province within a country, such as California or New York in the US, or Ontario or Alberta in Canada.</li><li><b> COUNTRY </b> - Indicates the region is a single country.</li></ul>  Code so that your app gracefully handles any future changes to this list."
           }
         },
         "description": "This type is used to provide region details for a tax jurisdiction."
@@ -5227,8 +5227,8 @@
             "description": "The contact URL of the Responsible Person or entity."
           },
           "country": {
-            "description": "The two-letter <a href=\"https://www.iso.org/iso-3166-country-codes.html \" target=\"_blank\">ISO 3166</a> standard of the country of the address.",
-            "$ref": "#/components/schemas/CountryCodeEnum"
+            "type": "string",
+            "description": "The two-letter <a href=\"https://www.iso.org/iso-3166-country-codes.html \" target=\"_blank\">ISO 3166</a> standard of the country of the address."
           },
           "countryName": {
             "type": "string",
@@ -5258,7 +5258,7 @@
             "type": "array",
             "description": "The type(s) associated with the Responsible Person or entity.",
             "items": {
-              "$ref": "#/components/schemas/ResponsiblePersonTypeEnum"
+              "type": "string"
             }
           }
         },
@@ -5409,8 +5409,8 @@
             "description": "The seller-defined label for an individual custom policy."
           },
           "type": {
-            "description": "The type of custom policy, such as PRODUCT_COMPLIANCE or TAKE_BACK.",
-            "$ref": "#/components/schemas/SellerCustomPolicyTypeEnum"
+            "type": "string",
+            "description": "The type of custom policy, such as PRODUCT_COMPLIANCE or TAKE_BACK."
           }
         },
         "description": "This type defines the custom policies that apply to a listed item."
@@ -5527,8 +5527,8 @@
         "type": "object",
         "properties": {
           "country": {
-            "description": "The two-letter <a href=\"https://www.iso.org/iso-3166-country-codes.html \" target=\"_blank\">ISO 3166</a> standard of the country for where the item is to be shipped.",
-            "$ref": "#/components/schemas/CountryCodeEnum"
+            "type": "string",
+            "description": "The two-letter <a href=\"https://www.iso.org/iso-3166-country-codes.html \" target=\"_blank\">ISO 3166</a> standard of the country for where the item is to be shipped."
           },
           "postalCode": {
             "type": "string",
@@ -5569,8 +5569,8 @@
             "description": "A localized text string that indicates the name of the shipping region. The value returned here is dependent on the corresponding <b>regionType</b> value. <br><br> If the <b>regionType</b> value is <code>WORLDWIDE</code>, the <b>regionName</b> value will show <code>Worldwide</code>.<br><br> If the <b>regionType</b> value is <code>WORLD_REGION</code>, the <b>regionName</b> value will be a localized text string for one of the following large geographical regions: Africa, Americas, Asia, Australia, Central America and Caribbean, Europe, European Union, Greater China, Middle East, North America, Oceania, South America, Southeast Asia, or Channel Islands.<br><br>If the <b>regionType</b> value is <code>COUNTRY</code>, the <b>regionName</b> value will be a localized text string for any country in the world.<br><br>If the <b>regionType</b> value is <code>STATE_OR_PROVINCE</code>, the <b>regionName</b> value will be a localized text string for any US state or Canadian province. <br><br>If the <b>regionType</b> value is <code>COUNTRY_REGION</code>, the <b>regionName</b> value may be a localized version of one of the following: Alaska/Hawaii, US Protectorates, APO/FPO (Army or Fleet Post Office), or PO BOX."
           },
           "regionType": {
-            "description": "An enumeration value that indicates the level or type of shipping region. <br><br><b> Valid Values: </b> <ul><li><b> COUNTRY_REGION </b> - Indicates the region is a domestic region or special location within a country.</li><li><b> STATE_OR_PROVINCE </b> - Indicates the region is a state or province within a country, such as California or New York in the US, or Ontario or Alberta in Canada.</li><li><b> COUNTRY </b> - Indicates the region is a single country.</li><li><b> WORLD_REGION </b> - Indicates the region is a world region, such as Africa, the Middle East, or Southeast Asia.</li><li><b> WORLDWIDE </b> - Indicates the region is the entire world. This value is only applicable for included shiping regions, and not excluded shipping regions.</li></ul> For more detail on the actual <b>regionName</b>/<b>regionId</b> values that will be returned based on the <b>regionType</b> value, see the <a href=\"/develop/api/buy/browse_api#buy-browse_api-item-getitem.shiptoregion.regionid\">regionId</a> and/or <a href=\"/develop/api/buy/browse_api#buy-browse_api-item-getitem.shiptoregion.regionname\">regionName</a> field descriptions.<br><br> Code so that your app gracefully handles any future changes to this list.",
-            "$ref": "#/components/schemas/RegionTypeEnum"
+            "type": "string",
+            "description": "An enumeration value that indicates the level or type of shipping region. <br><br><b> Valid Values: </b> <ul><li><b> COUNTRY_REGION </b> - Indicates the region is a domestic region or special location within a country.</li><li><b> STATE_OR_PROVINCE </b> - Indicates the region is a state or province within a country, such as California or New York in the US, or Ontario or Alberta in Canada.</li><li><b> COUNTRY </b> - Indicates the region is a single country.</li><li><b> WORLD_REGION </b> - Indicates the region is a world region, such as Africa, the Middle East, or Southeast Asia.</li><li><b> WORLDWIDE </b> - Indicates the region is the entire world. This value is only applicable for included shiping regions, and not excluded shipping regions.</li></ul> For more detail on the actual <b>regionName</b>/<b>regionId</b> values that will be returned based on the <b>regionType</b> value, see the <a href=\"/develop/api/buy/browse_api#buy-browse_api-item-getitem.shiptoregion.regionid\">regionId</a> and/or <a href=\"/develop/api/buy/browse_api#buy-browse_api-item-getitem.shiptoregion.regionname\">regionName</a> field descriptions.<br><br> Code so that your app gracefully handles any future changes to this list."
           }
         },
         "description": "This type is used provide details about included and excluded shipping regions."
@@ -5587,8 +5587,8 @@
             "description": "The deadline date that the item must be purchased by in order to be received by the buyer within the delivery window (<b> maxEstimatedDeliveryDate</b> and  <b> minEstimatedDeliveryDate</b> fields). This field is returned only for items that are eligible for 'Same Day Handling'. For these items, the value of this field is what is displayed in the <b> Delivery</b> line on the View Item page.  <br><br>This value is returned in UTC format (yyyy-MM-ddThh:mm:ss.sssZ), which you can convert into the local time of the buyer."
           },
           "fulfilledThrough": {
-            "description": "If the item is being shipped by the eBay <a href=\"https://pages.ebay.com/seller-center/shipping/global-shipping-program.html \" target=\"_blank\">Global Shipping program</a>, this field returns <code>GLOBAL_SHIPPING</code>.<br><br>If the item is being shipped using the eBay International Shipping program, this field returns <code>INTERNATIONAL_SHIPPING</code>. <br><br>Otherwise, this field is null.",
-            "$ref": "#/components/schemas/FulfilledThroughEnum"
+            "type": "string",
+            "description": "If the item is being shipped by the eBay <a href=\"https://pages.ebay.com/seller-center/shipping/global-shipping-program.html \" target=\"_blank\">Global Shipping program</a>, this field returns <code>GLOBAL_SHIPPING</code>.<br><br>If the item is being shipped using the eBay International Shipping program, this field returns <code>INTERNATIONAL_SHIPPING</code>. <br><br>Otherwise, this field is null."
           },
           "guaranteedDelivery": {
             "type": "boolean",
@@ -5745,8 +5745,8 @@
             "description": "The percentage of tax."
           },
           "taxType": {
-            "description": "This field indicates the type of tax that may be collected for the item.",
-            "$ref": "#/components/schemas/TaxTypeEnum"
+            "type": "string",
+            "description": "This field indicates the type of tax that may be collected for the item."
           }
         },
         "description": "The type that defines the tax fields."
@@ -5755,8 +5755,8 @@
         "type": "object",
         "properties": {
           "unit": {
-            "description": "An enumeration value that indicates the units of the time span (e.g., <code>HOURS</code>). The enumeration value in this field defines the period of time being used to measure the duration.<br><br>Refer to <a href=\"/api-docs/buy/browse/types/ba:TimeDurationUnitEnum\">TimeDurationUnitEnum</a> for the list of supported values.",
-            "$ref": "#/components/schemas/TimeDurationUnitEnum"
+            "type": "string",
+            "description": "An enumeration value that indicates the units of the time span (e.g., <code>HOURS</code>). The enumeration value in this field defines the period of time being used to measure the duration.<br><br>Refer to <a href=\"/api-docs/buy/browse/types/ba:TimeDurationUnitEnum\">TimeDurationUnitEnum</a> for the list of supported values."
           },
           "value": {
             "type": "integer",
@@ -5789,8 +5789,8 @@
             "description": "The text representing the name of the aspect for the name/value pair, such as Color."
           },
           "type": {
-            "description": "This indicates if the value being returned is a string or an array of values. <br><br><b> Valid Values: </b> <ul><li><b> STRING</b> - Indicates the value returned is a string.</li>  <li><b> STRING_ARRAY</b> - Indicates the value returned is an array of strings.</li></ul>  Code so that your app gracefully handles any future changes to this list.",
-            "$ref": "#/components/schemas/ValueTypeEnum"
+            "type": "string",
+            "description": "This indicates if the value being returned is a string or an array of values. <br><br><b> Valid Values: </b> <ul><li><b> STRING</b> - Indicates the value returned is a string.</li>  <li><b> STRING_ARRAY</b> - Indicates the value returned is an array of strings.</li></ul>  Code so that your app gracefully handles any future changes to this list."
           },
           "value": {
             "type": "string",
@@ -5811,8 +5811,8 @@
         "type": "object",
         "properties": {
           "issuingCountry": {
-            "description": "The two-letter <a href=\"https://www.iso.org/iso-3166-country-codes.html \" target=\"_blank\">ISO 3166</a> standard of the country issuing the seller's VAT (value added tax) ID. VAT is a tax added by some European countries.",
-            "$ref": "#/components/schemas/CountryCodeEnum"
+            "type": "string",
+            "description": "The two-letter <a href=\"https://www.iso.org/iso-3166-country-codes.html \" target=\"_blank\">ISO 3166</a> standard of the country issuing the seller's VAT (value added tax) ID. VAT is a tax added by some European countries."
           },
           "vatId": {
             "type": "string",

@@ -62,7 +62,7 @@ class AvailableCoupon implements ModelInterface, ArrayAccess, JsonSerializable
     protected static array $openAPITypes = [
         'constraint' => '\eBay\Buy\Browse\Model\CouponConstraint',
         'discount_amount' => '\eBay\Buy\Browse\Model\Amount',
-        'discount_type' => '\eBay\Buy\Browse\Model\CouponDiscountTypeEnum',
+        'discount_type' => 'string',
         'message' => 'string',
         'redemption_code' => 'string',
         'terms_web_url' => 'string'
@@ -357,9 +357,9 @@ class AvailableCoupon implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Gets discount_type
      *
-     * @return \eBay\Buy\Browse\Model\CouponDiscountTypeEnum|null
+     * @return string|null
      */
-    public function getDiscountType(): ?\eBay\Buy\Browse\Model\CouponDiscountTypeEnum
+    public function getDiscountType(): ?string
     {
         return $this->container['discount_type'];
     }
@@ -367,11 +367,11 @@ class AvailableCoupon implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets discount_type
      *
-     * @param \eBay\Buy\Browse\Model\CouponDiscountTypeEnum|null $discount_type The type of discount that the coupon applies.
+     * @param string|null $discount_type The type of discount that the coupon applies.
      *
      * @return $this
      */
-    public function setDiscountType(?\eBay\Buy\Browse\Model\CouponDiscountTypeEnum $discount_type): static
+    public function setDiscountType(?string $discount_type): static
     {
         if (is_null($discount_type)) {
             throw new InvalidArgumentException('non-nullable discount_type cannot be null');
